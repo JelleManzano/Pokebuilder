@@ -9,7 +9,7 @@ router.get("/", (req, res, next) => {
 });
 
 //post /auth/signup
-router.post("/", async (req, res, next) => {
+router.post("/create", async (req, res, next) => {
   const { username, email, password1, password2 } = req.body;
   //cannot leave an empty field check
   if (username === "" || email === "" || password1 === "" || password2 === "") {
@@ -93,7 +93,7 @@ router.post("/", async (req, res, next) => {
         })
         return;
     }
-
+    console.log(trainerExists)
     const correctPassword = await bcrypt.compare(password1, trainerExists.password1)
 
     if (correctPassword === false) {
@@ -106,6 +106,7 @@ router.post("/", async (req, res, next) => {
     req.session.save(() => {
         res.redirect("/")
     })
+    console.log(req.session)
    } catch (error) {
     next(error)
    }
