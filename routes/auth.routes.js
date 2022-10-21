@@ -43,20 +43,20 @@ router.post("/", async (req, res, next) => {
     });
     return;
   }
-  const validTrainer = await Trainer.findOne({ username: username });
-  if (validTrainer !== null) {
-    res.render("auth/sign-login.hbs", {
-      errorMessage: "The trainer name is already in use",
-    });
-  }
-  const validEmail = await Trainer.findOne({ email: email });
-  if (validEmail !== null) {
-    res.render("auth/sign-login.hbs", {
-      errorMessage: "That e-mail is already in use",
-    });
-  }
-  try {
 
+  try {
+    const validTrainer = await Trainer.findOne({ username: username });
+    if (validTrainer !== null) {
+      res.render("auth/sign-login.hbs", {
+        errorMessage: "The trainer name is already in use",
+      });
+    }
+    const validEmail = await Trainer.findOne({ email: email });
+    if (validEmail !== null) {
+      res.render("auth/sign-login.hbs", {
+        errorMessage: "That e-mail is already in use",
+      });
+    }
 
     const salt = await bcrypt.genSalt(12);
     const hashPassword = await bcrypt.hash(password1, salt);
@@ -72,6 +72,44 @@ router.post("/", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
+});
+
+//post route for the login
+router.post("/", async (req, res, next) => {
+    const {username, password1} = req.body;
+
+    if (username === "" || password1 ==="") {
+        res.render("auth/sign-login.hbs", {
+            errorLogin: "Wrong Trainer alias or password",
+        })
+        return;
+    }
+    //verify that user exists, verify correct password, implement a session system
+   try {
+    const trainerExists = await Trainer.findOne({username: username})
+    if(trainerExists === null) {
+        res.render("auth/sign-login.hbs", {
+            errorLogin: "Wrong Trainer alias or password"
+        })
+        return;
+    }
+
+    const correctPassword = await bcrypt.compare(password1, trainerExists.password1)
+
+    if (correctPassword === false) {
+        res.render("auth/sign-login.hbs", {
+            errorLogin: "Wrong Trainer alias or password"
+        })
+        return;
+    }
+    req.session.activeTrainer = trainerExists
+    req.session.save(() => {
+        res.redirect("/")
+    })
+   } catch (error) {
+    next(error)
+   }
+ 
 });
 
 module.exports = router;

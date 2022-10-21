@@ -20,14 +20,14 @@
 
 <div id="log-in"> 
   <h3>Log in</h3>
-  <form action="">
+  <form action="/auth" method="POST">
     <label for="username"> Trainer alias:</label>
     <input type="text" name="username" />
     <br />
     <label for="password1">Password:</label>
     <input type="password" name="password1" autocomplete="off" />
     <br />
-    <p>{{errorMessage}}</p>
+    <p>{{errorLogin}}</p>
     <button>Log-in!</button>
 
   </form>

@@ -6,7 +6,8 @@ const trainerSchema = new Schema(
       type: String,
       trim: true,
       required: false,
-      unique: true
+      unique: true,
+      lowercase: true
     },
     email: {
       type: String,
