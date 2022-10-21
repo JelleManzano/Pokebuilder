@@ -19,7 +19,7 @@ router.post("/", async (req, res, next) => {
     return;
   }
   //Both passwords are the same check
-  if (password1 !== password2 || password2 !== password2) {
+  if (password1 !== password2) {
     res.render("auth/sign-login.hbs", {
       errorMessage: "Please make sure both passwords are the same",
     });
