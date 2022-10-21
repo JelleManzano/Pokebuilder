@@ -19,8 +19,9 @@ const trainerSchema = new Schema(
       type: String,
       required: true
     },
-    password2: String,
-    required:true
+   password2: {
+    type: String,
+   },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`    
