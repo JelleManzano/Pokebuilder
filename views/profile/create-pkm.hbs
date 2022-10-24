@@ -1,12 +1,37 @@
 <div>
-    <form action="">
-        <label for="name">Choose your base Pokemon:</label>
-        <select name="name" >
+    <form action="/profile/create" method="POST">
+        <label for="pokemon">Choose your base Pokemon:</label>
+        <select name="pokemon" >
             {{#each pokemonDetails.data.results}}
             <option value="{{name}}">{{name}}</option>
             {{/each}}
         </select>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+        <br>
+        <label for="types">Types:</label>
+        <select name="types" required>
+            {{#each pokemonTypes.data.results}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <select name="types">
+            <option value="">Opcional</option>
+            {{#each pokemonTypes.data.results}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <label for="habitat">Habitat:</label>
+        <select name="habitat">
+            {{#each pokemonHabitat.data.results}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description"></textarea>
+        <button>Create!</button>
     </form>
-
-    
 </div>
