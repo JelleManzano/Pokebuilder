@@ -9,10 +9,11 @@ router.get("/pokedex", async (req, res, next) => {
     const pokemonList = await axios.get(
       `https://pokeapi.co/api/v2/pokemon?limit=151`
     );
+    
     res.render("app/pokedex.hbs", {
       pokemonList,
     });
-    console.log(pokemonList.data.results[0].url);
+   console.log(pokemonImage);
   } catch (error) {
     next(error);
   }
