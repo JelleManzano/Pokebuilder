@@ -13,7 +13,7 @@ router.get("/pokedex", async (req, res, next) => {
     res.render("app/pokedex.hbs", {
       pokemonList,
     });
-   console.log(pokemonImage);
+    console.log(pokemonList.data);
   } catch (error) {
     next(error);
   }
