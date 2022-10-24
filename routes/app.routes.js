@@ -12,6 +12,7 @@ router.get("/pokedex", async (req, res, next) => {
     res.render("app/pokedex.hbs", {
       pokemonList,
     });
+    console.log(pokemonList.data.results[0].url);
   } catch (error) {
     next(error);
   }
@@ -44,7 +45,6 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
       pokemonMinus,
       pokemonContinue,
     });
-    console.log(pokemonChain.data.chain.evolves_to[0].evolves_to[0].species.name);
   } catch (error) {
     next(error);
   }

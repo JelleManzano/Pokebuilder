@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, default: mongoose } = require("mongoose");
 
 const pokeSchema = new Schema({
   pokemon: String,
@@ -9,7 +9,10 @@ const pokeSchema = new Schema({
   baseStats: [Object],
   photo: String,
   profPhoto: String,
-  trainer: String
+  trainer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Trainer"
+  }
 });
 
 const Pokemon = model("Pokemon", pokeSchema);

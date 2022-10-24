@@ -1,3 +1,12 @@
 <div>
-    
+  <img src="{{dbPokemon.photo}}" alt="img-poke" />
+  <p>{{dbPokemon.name}}</p>
+
+  <p>Types:{{dbPokemon.types}}</p>
+  <p>Habitat: {{dbPokemon.habitat}}</p>
+  <p>Description: {{dbPokemon.description}}</p>
+  {{#each dbPokemon.baseStats}}
+    <p>{{stat.name}}: {{base_stat}}</p>
+  {{/each}}
+
 </div>

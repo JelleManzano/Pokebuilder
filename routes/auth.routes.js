@@ -104,7 +104,7 @@ router.post("/", async (req, res, next) => {
     }
     req.session.activeTrainer = trainerExists
     req.session.save(() => {
-        res.redirect("/")
+        res.redirect("/profile")
     })
     console.log(req.session)
    } catch (error) {
