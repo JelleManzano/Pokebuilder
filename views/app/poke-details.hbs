@@ -2,37 +2,35 @@
       <img src="{{pokemonDetails.data.sprites.front_default}}" alt="">
 </div>
 <div>
-    <h2>{{pokemonDetails.data.name}}</h2>
-    <p>{{pokemonDetails.data.id}}</p>
+    <h2>#{{pokemonDetails.data.id}} - {{pokemonDetails.data.name}}</h2>
+    <p></p>
 </div>
 <div>
     {{#each pokemonDetails.data.types}}
-    <p>{{type.name}}</p>
+    <p>Type:{{type.name}}</p>
     {{/each}}
-    <p>{{pokemonDetails.data.weight}}</p>
-    <p>{{pokemonDetails.data.height}}</p>
-    <p>{{pokemonSpecies.data.color.name}}</p>
-    <p>{{pokemonSpecies.data.shape.name}}</p>
-    <p>{{pokemonSpecies.data.habitat.name}}</p>
+    <p>Weight:{{pokemonDetails.data.weight}}</p>
+    <p>Height:{{pokemonDetails.data.height}}</p>
+    <p>Color:{{pokemonSpecies.data.color.name}}</p>
+    <p>Form:{{pokemonSpecies.data.shape.name}}</p>
+    <p>Habitat:{{pokemonSpecies.data.habitat.name}}</p>
     {{#with pokemonSpecies.data.flavor_text_entries.[2]}}
-    <p>{{flavor_text}}</p>
+    <p>Pokedex entry:{{flavor_text}}</p>
     {{/with}}
 </div>
 <div>
     {{#each pokemonDetails.data.stats}}
-    <p>{{stat.name}}</p>
-    <p>{{base_stat}}</p>
+    <p>{{stat.name}}:{{base_stat}}</p>
     {{/each}}
 </div>
 <div>
     <div>
-      <img src="{{pokemonMinus.data.sprites.front_default}}" alt="">
-      <p>{{pokemonMinus.data.id}}</p>
-      <p>{{pokemonMinus.data.name}}</p>
+      <a href="/app/pokedex/{{pokemonMinus.data.id}}"><img src="{{pokemonMinus.data.sprites.front_default}}" alt="">
+      <p>#{{pokemonMinus.data.id}} - {{pokemonMinus.data.name}}</p></a> 
+      {{!--! El boton hacia atrás a veces tarda mucho en cargar y da error 500 --}}
       
-
     </div>
-      <img src="{{pokemonContinue.data.sprites.front_default}}" alt="">
-      <p>{{pokemonContinue.data.id}}</p>
-      <p>{{pokemonContinue.data.name}}</p>
+     <a href="/app/pokedex/{{pokemonContinue.data.id}}"><img src="{{pokemonContinue.data.sprites.front_default}}" alt="">
+      <p>#{{pokemonContinue.data.id}} - {{pokemonContinue.data.name}}</p></a>
+      
 </div>
