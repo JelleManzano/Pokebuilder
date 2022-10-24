@@ -2,9 +2,18 @@
 const express = require("express")
 const router = express.Router()
 
+
+
 /* GET home page */
 router.get("/", (req, res, next) => {
+
+  // ejemplo llamada api
+
+  //axios.get("https://pokeapi.co/api/v2/pokemon/")
+ 
+
   res.render("index");
+
 });
 
 //Get auth routes
