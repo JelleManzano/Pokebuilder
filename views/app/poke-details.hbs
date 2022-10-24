@@ -1,36 +1,43 @@
 <div>
-      <img src="{{pokemonDetails.data.sprites.front_default}}" alt="">
+  <img src="{{pokemonDetails.data.sprites.front_default}}" alt="" />
 </div>
 <div>
-    <h2>#{{pokemonDetails.data.id}} - {{pokemonDetails.data.name}}</h2>
-    <p></p>
+  <h2>#{{pokemonDetails.data.id}} - {{pokemonDetails.data.name}}</h2>
+  <p></p>
 </div>
 <div>
-    {{#each pokemonDetails.data.types}}
+  {{#each pokemonDetails.data.types}}
     <p>Type:{{type.name}}</p>
-    {{/each}}
-    <p>Weight:{{pokemonDetails.data.weight}}</p>
-    <p>Height:{{pokemonDetails.data.height}}</p>
-    <p>Color:{{pokemonSpecies.data.color.name}}</p>
-    <p>Form:{{pokemonSpecies.data.shape.name}}</p>
-    <p>Habitat:{{pokemonSpecies.data.habitat.name}}</p>
-    {{#with pokemonSpecies.data.flavor_text_entries.[2]}}
-    <p>Pokedex entry:{{flavor_text}}</p>
-    {{/with}}
+  {{/each}}
+  <p>Weight:{{pokemonDetails.data.weight}}</p>
+  <p>Height:{{pokemonDetails.data.height}}</p>
+  <p>Color:{{pokemonSpecies.data.color.name}}</p>
+  <p>Form:{{pokemonSpecies.data.shape.name}}</p>
+  <p>Habitat:{{pokemonSpecies.data.habitat.name}}</p>
+  <p>Pokedex entry:{{pokemonSpecies.data.flavor_text_entries.2.flavor_text}}</p>
+  <p>Evolves to:
+    {{pokemonChain.data.chain.evolves_to.0.evolves_to.0.species.name}}</p>
 </div>
 <div>
-    {{#each pokemonDetails.data.stats}}
+  {{#each pokemonDetails.data.stats}}
     <p>{{stat.name}}:{{base_stat}}</p>
-    {{/each}}
+  {{/each}}
 </div>
 <div>
-    <div>
-      <a href="/app/pokedex/{{pokemonMinus.data.id}}"><img src="{{pokemonMinus.data.sprites.front_default}}" alt="">
-      <p>#{{pokemonMinus.data.id}} - {{pokemonMinus.data.name}}</p></a> 
-      {{!--! El boton hacia atrás a veces tarda mucho en cargar y da error 500 --}}
-      
-    </div>
-     <a href="/app/pokedex/{{pokemonContinue.data.id}}"><img src="{{pokemonContinue.data.sprites.front_default}}" alt="">
-      <p>#{{pokemonContinue.data.id}} - {{pokemonContinue.data.name}}</p></a>
-      
+  <div>
+    {{#if pokemonMinus}}
+      <a href="/app/pokedex/{{pokemonMinus.data.id}}"><img
+          src="{{pokemonMinus.data.sprites.front_default}}"
+          alt=""
+        />
+        <p>#{{pokemonMinus.data.id}} - {{pokemonMinus.data.name}}</p></a>
+
+    {{/if}}
+  </div>
+  <a href="/app/pokedex/{{pokemonContinue.data.id}}"><img
+      src="{{pokemonContinue.data.sprites.front_default}}"
+      alt=""
+    />
+    <p>#{{pokemonContinue.data.id}} - {{pokemonContinue.data.name}}</p></a>
+
 </div>

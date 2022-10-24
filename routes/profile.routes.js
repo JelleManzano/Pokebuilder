@@ -20,7 +20,7 @@ router.get("/", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.get("/createNewPokemon", isLoggedIn, async (req, res, next) => {
+router.get("/create", isLoggedIn, async (req, res, next) => {
   try {
     const pokemonDetails = await axios.get(
       `https://pokeapi.co/api/v2/pokemon?limit=151/`
@@ -32,6 +32,7 @@ router.get("/createNewPokemon", isLoggedIn, async (req, res, next) => {
       pokemonDetails,
       pokemonSpecies,
     });
+    console.log(pokemonDetails.data);
   } catch (error) {
     next(error);
   }

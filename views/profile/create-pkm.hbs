@@ -1,8 +1,12 @@
 <div>
     <form action="">
-        <select name=" " id=""></select>
-
-
-
+        <label for="name">Choose your base Pokemon:</label>
+        <select name="name" >
+            {{#each pokemonDetails.data.results}}
+            <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
     </form>
+
+    
 </div>
