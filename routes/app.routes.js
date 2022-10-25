@@ -51,4 +51,6 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
   }
 });
 
+
+
 module.exports = router;
