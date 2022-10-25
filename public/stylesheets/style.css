@@ -10,3 +10,27 @@ a {
 h1 {
   color: 15px;
 }
+
+#trainer-details {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 50% 50%;
+  
+}
+
+#avatar {
+  grid-column: 0/2;
+  grid-row: 0/1;
+  background-color: red;
+}
+
+#username {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-color: purple;
+}
+
+#trainer-specs{
+  grid-area: 1/0/2/2;
+  background-color: green;
+}

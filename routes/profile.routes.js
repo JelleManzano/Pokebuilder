@@ -4,6 +4,7 @@ const router = express.Router();
 const { isLoggedIn } = require("../middlewares/auth.middlewares");
 const axios = require("axios");
 const Pokemon = require("../models/pokemon.model");
+const {capitalize} = require("../utils/capitalize")
 
 //GET /profile
 
