@@ -12,25 +12,46 @@ h1 {
 }
 
 #trainer-details {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 50% 50%;
-  
+  display: flex;
+  background-color: aqua;
+}
+#container {
+  display: flex;
+  flex-direction: column;
 }
 
-#avatar {
-  grid-column: 0/2;
-  grid-row: 0/1;
-  background-color: red;
+#avatar img {
+  height: 200px;
 }
 
 #username {
-  grid-column: 1/2;
-  grid-row: 1/2;
-  background-color: purple;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-#trainer-specs{
-  grid-area: 1/0/2/2;
-  background-color: green;
+#pokemonTeam {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+}
+
+.eachPokemon{
+  border: solid 1px black;
+  display:flex;
+  width: 48%;
+  margin: 10px 0px;
+} 
+
+.pokeDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokeStats{
+  display: flex;
+  flex-direction: row;
+  flex-basis: 33%;
+  flex-grow: 1;
 }

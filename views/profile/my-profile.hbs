@@ -3,37 +3,44 @@
   <div id="avatar">
     <img src="{{trainerDetails.avatar}}" alt="avatar" />
   </div>
+  <div id="container">
+    <div id="username">
+      <h3>{{trainerDetails.username}}</h3>
+      <a href="/profile/update-profile/{{trainerDetails._id}}">Update your
+        profile!</a>
+    </div>
 
-  <div id="username">
-    <h3>{{trainerDetails.username}}</h3>
+    <div id="trainer-specs">
+      <p>From: {{trainerDetails.village}}</p>
+      <p>User since {{trainerDetails.createdAt}}</p>
+      <p>Badges: {{trainerDetails.badges}}</p>
+
+    </div>
   </div>
-
-  <div id="trainer-specs">
-    <p>From: {{trainerDetails.village}}</p>
-    <p>User since {{trainerDetails.createdAt}}</p>
-    <p>Badges: {{trainerDetails.badges}}</p>
-    <a href="/profile/update-profile/{{trainerDetails._id}}">Update your
-      profile!</a>
-  </div>
-
 </div>
 {{! Pokemon }}
-<div>
+
+<div id="pokemonTeam">
   {{#each dbPokemon}}
-    <img src="{{photo}}" alt="img-poke" />
-    <p>{{name}}</p>
+    <div class="eachPokemon">
+      <img src="{{photo}}" alt="img-poke" />
+      <div class="pokeDescription">
+        <p>{{name}}</p>
+        <p>Types:{{types}}</p>
+        <p>Habitat: {{habitat}}</p>
+        <p>Description: {{description}}</p>
+      </div>
+        <div class="pokeStats">
+      {{#each baseStats}}
+          <h4>{{stat.name}}:</h4>
+          <p>{{base_stat}}</p>
+      {{/each}}
+        </div>
+      <a href="/profile/update-pokemon/{{_id}}"><button> Update</button></a>
 
-    <p>Types:{{types}}</p>
-    <p>Habitat: {{habitat}}</p>
-    <p>Description: {{description}}</p>
-    {{#each baseStats}}
-      <h4>{{stat.name}}:</h4>
-      <p>{{base_stat}}</p>
-    {{/each}}
-    <a href="/profile/update-pokemon/{{_id}}">Update your Pokemon</a>
-
-    <form action="/profile/delete/{{_id}}" method="post">
-      <button>Delete your Pokemon</button>
-    </form>
+      <form action="/profile/delete/{{_id}}" method="post">
+        <button>Delete</button>
+      </form>
+    </div>
   {{/each}}
 </div>
