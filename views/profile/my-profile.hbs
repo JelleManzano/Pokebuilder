@@ -1,3 +1,19 @@
+
+
+<div>
+  <img src="{{trainerDetails.avatar}}" alt="avatar">
+  <h3>{{trainerDetails.username}}</h3>
+</div>
+<div>
+  <p>From: {{trainerDetails.village}}</p>
+  <p>User since {{trainerDetails.createdAt}}</p>
+  <p>Badges: {{trainerDetails.badges}}</p>
+  <a href="/profile/update-profile/{{trainerDetails._id}}">Update your profile!</a>
+</div>
+
+
+
+{{!-- Pokemon --}}
 <div>
   <img src="{{dbPokemon.photo}}" alt="img-poke" />
   <p>{{dbPokemon.name}}</p>

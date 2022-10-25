@@ -1,0 +1,39 @@
+<div>
+    <form action="/profile/update-profile/{{trainerUpdate._id}}" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" name="username">
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" name="email">
+    <br>
+    <label for="avatar">Avatar:</label>
+    <img src="https://imgur.com/zXwleo1.png" alt="avatar-1">
+    <input type="radio" name="avatar" value="https://imgur.com/zXwleo1.png">
+    <img src="https://imgur.com/DFzYE6N.png" alt="avatar-2">
+    <input type="radio" name="avatar" value="https://imgur.com/DFzYE6N.png">
+    <img src="https://imgur.com/1rGMqV1.png" alt="avatar-1">
+    <input type="radio" name="avatar" value="https://imgur.com/1rGMqV1.png">
+    <img src="https://imgur.com/TyEbmku.png" alt="avatar-1">
+    <input type="radio" name="avatar" value="https://imgur.com/TyEbmku.png">
+    <br>
+    <label for="village">Village:</label>
+        <select name="village">
+            <option value="Pallet Town">Pallet Town</option>
+            <option value="Viridian City">Viridian City</option>
+            <option value="Pewter City">Pewter City</option>
+            <option value="Cerulean City">Cerulean City</option>
+            <option value="Vermillion City">Vermillion City</option>
+            <option value="Lavender City">Lavender City</option>
+            <option value="Celadon City">Celadon City</option>
+            <option value="Saffron City">Saffron City</option>
+            <option value="Fuchsia City">Fuchsia City</option>
+            <option value="Cinnabar Island">Cinnabar Island</option>
+        </select>
+    <br>
+    <button>Update your profile!</button>
+
+    </form>
+    <form action="/profile/update-profile/{{trainerUpdate._id}}/delete" method="POST">
+    <button>Delete account!</button>
+    </form>
+</div>

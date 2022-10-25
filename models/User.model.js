@@ -23,6 +23,15 @@ const trainerSchema = new Schema(
    password2: {
     type: String,
    },
+   avatar: {
+    type: String,
+   },
+   badges: {
+    type: [String],
+   },
+   village: {
+    type: String,
+   },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`    

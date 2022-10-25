@@ -114,4 +114,43 @@ router.post("/delete/:idPkm", async (req, res, next) => {
     next(error);
   }
 });
+
+router.get("/update-profile/:id", async (req, res, next) => {
+  const {id} = req.params
+  try {
+    const trainerUpdate = await Trainer.findById(id)
+    res.render("profile/update-profile.hbs", {
+      trainerUpdate,
+    })
+    console.log(trainerUpdate);
+  } catch (error) {
+    next(error)
+    
+  }
+})
+
+router.post("/update-profile/:id", async (req, res, next) => {
+  const{id} = req.params
+  const {username, email, avatar, village} = req.body
+  try {
+    const trainerUpdate = await Trainer.findByIdAndUpdate(id,{
+      username, email, avatar, village
+    })
+    res.redirect("/profile")
+  } catch (error) {
+    next(error)
+  }
+})
+
+router.post("/update-profile/:id/delete", async (req, res, next) => {
+  const {id} = req.params
+  try {
+    const deleteProfile = await Trainer.findByIdAndDelete(id)
+    res.redirect("/")
+  } catch (error) {
+    next(error)
+  }
+})
+
+
 module.exports = router;
