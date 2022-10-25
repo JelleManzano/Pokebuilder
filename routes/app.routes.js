@@ -4,17 +4,17 @@ const Pokemon = require("../models/pokemon.model");
 const axios = require("axios");
 const { isLoggedIn } = require("../middlewares/auth.middlewares");
 const Trainer = require("../models/User.model");
+//const pokeData = require("../data/pokemon-data.json")
 
 router.get("/pokedex", async (req, res, next) => {
   try {
     const pokemonList = await axios.get(
       `https://pokeapi.co/api/v2/pokemon?limit=151`
     );
-
+      console.log(pokemonList.data.results);
     res.render("app/pokedex.hbs", {
-      pokemonList,
+      pokemonList: pokemonList.data.results,
     });
-    console.log(pokemonList.data);
   } catch (error) {
     next(error);
   }
@@ -32,6 +32,7 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
     const pokemonChain = await axios.get(
       pokemonSpecies.data.evolution_chain.url
     );
+    console.log(pokemonDetails);
     let pokemonMinus;
     if (parseInt(pokeIndex) > 1) {
       pokemonMinus = await axios.get(

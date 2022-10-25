@@ -53,5 +53,4 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-basis: 33%;
-  flex-grow: 1;
 }
