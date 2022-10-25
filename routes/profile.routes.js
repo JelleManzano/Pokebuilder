@@ -19,7 +19,7 @@ router.get("/", isLoggedIn, async (req, res, next) => {
 
     res.render("profile/my-profile.hbs", {
       trainerDetails,
-      dbPokemon: dbPokemon[0],
+      dbPokemon
     });
   } catch (error) {
     next(error);

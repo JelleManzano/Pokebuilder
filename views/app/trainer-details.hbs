@@ -1,0 +1,23 @@
+<div>
+   
+    <img src="{{trainerDetails.avatar}}" alt="trainer-avatar">
+    <h4>{{trainerDetails.username}}</h4>
+    <h5>From:</h5>
+    <p>{{trainerDetails.village}}</p>
+    <h5>User since</h5>
+    <p>{{trainerDetails.createdAt}}</p>
+    
+    <h2>Pokemon Team:</h2>
+    {{#each pokeTeam}}
+    <img src="{{photo}}" alt="poke-photo">
+    <h3>Name:</h3>
+    <p>{{name}}</p>
+    <h5>Types:</h5>
+    <p>{{types}}</p>
+    <h5>Habitat:</h5>
+    <p>{{habitat}}</p>
+    <h5>Description</h5>
+    <p>{{description}}</p>
+
+    {{/each}}
+</div>

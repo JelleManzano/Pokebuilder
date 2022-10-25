@@ -1,7 +1,5 @@
-
-
 <div>
-  <img src="{{trainerDetails.avatar}}" alt="avatar">
+  <img src="{{trainerDetails.avatar}}" alt="avatar" />
   <h3>{{trainerDetails.username}}</h3>
 </div>
 <div>
@@ -11,21 +9,22 @@
   <a href="/profile/update-profile/{{trainerDetails._id}}">Update your profile!</a>
 </div>
 
-
-
-{{!-- Pokemon --}}
+{{! Pokemon }}
 <div>
-  <img src="{{dbPokemon.photo}}" alt="img-poke" />
-  <p>{{dbPokemon.name}}</p>
+  {{#each dbPokemon}}
+  <img src="{{photo}}" alt="img-poke" />
+  <p>{{name}}</p>
 
-  <p>Types:{{dbPokemon.types}}</p>
-  <p>Habitat: {{dbPokemon.habitat}}</p>
-  <p>Description: {{dbPokemon.description}}</p>
-  {{#each dbPokemon.baseStats}}
-    <p>{{stat.name}}: {{base_stat}}</p>
+  <p>Types:{{types}}</p>
+  <p>Habitat: {{habitat}}</p>
+  <p>Description: {{description}}</p>
+  {{#each baseStats}}
+    <h4>{{stat.name}}:</h4> <p>{{base_stat}}</p>
   {{/each}}
+  <a href="/profile/update-pokemon/{{_id}}">Update your Pokemon</a>
 
-<form action="/profile/delete/{{dbPokemon._id}}" method="post">
-<button>Delete your Pokemon</button>
-</form>
+  <form action="/profile/delete/{{_id}}" method="post">
+    <button>Delete your Pokemon</button>
+  </form>
+{{/each}}
 </div>

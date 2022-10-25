@@ -67,8 +67,7 @@ router.post("/create", async (req, res, next) => {
       password1: hashPassword,
     };
     await Trainer.create(newTrainer);
-    //pruebas, redirect a  home
-    res.redirect("/");
+    res.redirect("/profile");
   } catch (error) {
     next(error);
   }

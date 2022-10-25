@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <img src="{{commPokeDetails.photo}}" alt="poke-photo" />
+  </div>
+  <h3>{{commPokeDetails.name}}</h3>
+  <h4>Types:</h4>
+  <p>{{commPokeDetails.types}}</p>
+  <h4>Habitat:</h4>
+  <p>{{commPokeDetails.habitat}}</p>
+  <h4>Description:</h4>
+  <p>{{commPokeDetails.description}}</p>
+  <h4>Base stats:</h4>
+  {{#each  commPokeDetails.baseStats}}
+  <p>{{stat.name}}:
+    {{base_stat}}
+  </p>
+  {{/each}}
+</div>

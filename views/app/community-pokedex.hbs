@@ -1,0 +1,13 @@
+<div>
+    {{#each communityDex}}
+    <a href="/app/community-pokedex/{{_id}}">
+    <img src="{{photo}}" alt="poke-photo">
+    <p>{{name}}</p>
+    </a>
+    <p>{{types}}</p>
+    <a href="/app/community/{{trainer._id}}">
+    <p>@{{trainer.username}}</p>
+    </a>
+    {{/each}}
+    
+</div>
