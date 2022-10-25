@@ -1,7 +1,7 @@
 <div>
-    <p>Lista</p>
-    {{#each pokemonList}}
-    <a href="/app/pokedex/{{name}}">
+    {{#each pokeData}}
+    <a href="/app/pokedex/{{id}}">
+    <img src="{{url}}" alt="poke-pic">
     <p>{{name}}</p>
     </a>
     {{/each}}

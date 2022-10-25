@@ -4,16 +4,12 @@ const Pokemon = require("../models/pokemon.model");
 const axios = require("axios");
 const { isLoggedIn } = require("../middlewares/auth.middlewares");
 const Trainer = require("../models/User.model");
-//const pokeData = require("../data/pokemon-data.json")
+const pokeData = require("../data/pokemon-data.json");
 
 router.get("/pokedex", async (req, res, next) => {
   try {
-    const pokemonList = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon?limit=151`
-    );
-      console.log(pokemonList.data.results);
     res.render("app/pokedex.hbs", {
-      pokemonList: pokemonList.data.results,
+      pokeData,
     });
   } catch (error) {
     next(error);
@@ -29,10 +25,7 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
     const pokemonSpecies = await axios.get(
       `https://pokeapi.co/api/v2/pokemon-species/${pokeIndex}`
     );
-    const pokemonChain = await axios.get(
-      pokemonSpecies.data.evolution_chain.url
-    );
-    console.log(pokemonDetails);
+
     let pokemonMinus;
     if (parseInt(pokeIndex) > 1) {
       pokemonMinus = await axios.get(
@@ -40,13 +33,11 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
       );
     }
     const pokemonContinue = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon/${parseInt(pokeIndex) + 1}`
-    );
-
+        `https://pokeapi.co/api/v2/pokemon/${parseInt(pokeIndex) + 1}`
+      );
     res.render("app/poke-details.hbs", {
       pokemonDetails,
       pokemonSpecies,
-      pokemonChain,
       pokemonMinus,
       pokemonContinue,
     });
@@ -66,20 +57,19 @@ router.get("/community", isLoggedIn, async (req, res, next) => {
     next(error);
   }
 });
-router.get("/community/:id", isLoggedIn, async (req,res,next) => {
-  const {id} = req.params
+router.get("/community/:id", isLoggedIn, async (req, res, next) => {
+  const { id } = req.params;
   try {
-    const trainerDetails = await Trainer.findById(id)
-    const pokeTeam = await Pokemon.find({trainer: id})
+    const trainerDetails = await Trainer.findById(id);
+    const pokeTeam = await Pokemon.find({ trainer: id });
     res.render("app/trainer-details.hbs", {
       trainerDetails,
-      pokeTeam
-    })
-    
+      pokeTeam,
+    });
   } catch (error) {
-    next(error)
+    next(error);
   }
-})
+});
 
 //get de la pokedex de la comunidad y sus detalles
 router.get("/community-pokedex", isLoggedIn, async (req, res, next) => {
@@ -104,6 +94,5 @@ router.get("/community-pokedex/:id", isLoggedIn, async (req, res, next) => {
     next(error);
   }
 });
-
 
 module.exports = router;

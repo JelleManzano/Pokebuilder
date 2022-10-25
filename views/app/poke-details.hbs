@@ -15,8 +15,6 @@
   <p>Form:{{pokemonSpecies.data.shape.name}}</p>
   <p>Habitat:{{pokemonSpecies.data.habitat.name}}</p>
   <p>Pokedex entry:{{pokemonSpecies.data.flavor_text_entries.2.flavor_text}}</p>
-  <p>Evolves to:
-    {{pokemonChain.data.chain.evolves_to.0.evolves_to.0.species.name}}</p>
 </div>
 <div>
   {{#each pokemonDetails.data.stats}}
@@ -34,10 +32,11 @@
 
     {{/if}}
   </div>
-  <a href="/app/pokedex/{{pokemonContinue.data.id}}"><img
-      src="{{pokemonContinue.data.sprites.front_default}}"
-      alt=""
-    />
-    <p>#{{pokemonContinue.data.id}} - {{pokemonContinue.data.name}}</p></a>
-
+  {{#if pokemonContinue}}
+    <a href="/app/pokedex/{{pokemonContinue.data.id}}"><img
+        src="{{pokemonContinue.data.sprites.front_default}}"
+        alt=""
+      />
+      <p>#{{pokemonContinue.data.id}} - {{pokemonContinue.data.name}}</p></a>
+  {{/if}}
 </div>
