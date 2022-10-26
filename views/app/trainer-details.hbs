@@ -1,23 +1,54 @@
-<div>
-   
-    <img src="{{trainerDetails.avatar}}" alt="trainer-avatar">
-    <h4>{{trainerDetails.username}}</h4>
-    <h5>From:</h5>
-    <p>{{trainerDetails.village}}</p>
-    <h5>User since</h5>
-    <p>{{trainerDetails.createdAt}}</p>
-    
-    <h2>Pokemon Team:</h2>
-    {{#each pokeTeam}}
-    <img src="{{photo}}" alt="poke-photo">
-    <h3>Name:</h3>
-    <p>{{name}}</p>
-    <h5>Types:</h5>
-    <p>{{types}}</p>
-    <h5>Habitat:</h5>
-    <p>{{habitat}}</p>
-    <h5>Description</h5>
-    <p>{{description}}</p>
+<div id="trainer-details">
 
-    {{/each}}
+  <div id="avatar">
+    <img src="{{trainerDetails.avatar}}" alt="avatar" />
+  </div>
+  <div id="container">
+    <div id="username">
+      <h3>{{trainerDetails.username}}</h3>
+      <a href="/profile/update-profile/{{trainerDetails._id}}">Update your
+        profile!</a>
+    </div>
+
+    <div id="trainer-specs">
+      <p>From: {{trainerDetails.village}}</p>
+      <p>User since {{trainerDetails.createdAt}}</p>
+      <p>Badges: {{trainerDetails.badges}}</p>
+
+    </div>
+  </div>
+</div>
+    
+<div id="pokemonTeam">
+  {{#each pokeTeam}}
+    <div class="eachPokemon">
+      <div class="pokemon-profile">
+        <img src="{{photo}}" alt="img-poke" />
+      </div>
+      <div class="pokemon-general">
+        <p class="maintitle-poke-description">{{name}}</p>
+        <div class="pokemon-description">
+          <p class="title-poke-description">Types:</p>
+          <p>{{types}}</p>
+          <p class="title-poke-description">Habitat: </p>
+          <p>{{habitat}}</p>
+          <p class="title-poke-description">Description:</p>
+          <p>{{description}}</p>
+        </div>
+      </div>
+      <div class="pokeStats">
+        {{#each baseStats}}
+          <div class="eachStat">
+            <p>{{stat.name}}: <span class="stat-number">{{base_stat}}</span></p>
+          </div>
+        {{/each}}
+      </div>
+      <div class="pokemon-details-buttons">
+        <a href="/profile/update-pokemon/{{_id}}"><button> Update</button></a>
+        <form action="/profile/delete/{{_id}}" method="post">
+          <button>Delete</button>
+        </form>
+      </div>
+    </div>
+  {{/each}}
 </div>
