@@ -147,7 +147,9 @@ router.post("/update-profile/:id/delete", async (req, res, next) => {
   const {id} = req.params
   try {
     const deleteProfile = await Trainer.findByIdAndDelete(id)
-    res.redirect("/")
+    req.session.destroy(()=>{
+      res.redirect("/")
+    })
   } catch (error) {
     next(error)
   }

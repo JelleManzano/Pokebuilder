@@ -57,7 +57,6 @@ router.post("/create", async (req, res, next) => {
         errorMessage: "That e-mail is already in use",
       });
     }
-
     const salt = await bcrypt.genSalt(12);
     const hashPassword = await bcrypt.hash(password1, salt);
 
@@ -67,7 +66,11 @@ router.post("/create", async (req, res, next) => {
       password1: hashPassword,
     };
     await Trainer.create(newTrainer);
-    res.redirect("/profile");
+    const trainerExists = await Trainer.findOne({username: username})
+    req.session.activeTrainer = trainerExists
+    req.session.save(() => {
+        res.redirect(`/profile/update-profile/${trainerExists._id}`)
+    })
   } catch (error) {
     next(error);
   }

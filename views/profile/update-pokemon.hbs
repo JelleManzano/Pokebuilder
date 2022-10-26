@@ -13,7 +13,7 @@
         </select>
         <br>
         <label for="name">Name:</label>
-        <input type="text" name="name" autocomplete="off">
+        <input type="text" name="name" value="{{pokeUpdate.name}}" autocomplete="off">
         <br>
         <label for="types">Types:</label>
         <select name="types" required>
@@ -29,14 +29,14 @@
         </select>
         <br>
         <label for="habitat">Habitat:</label>
-        <select name="habitat">
+        <select name="habitat" required>
             {{#each pokemonHabitat.data.results}}
             <option value="{{name}}">{{name}}</option>
             {{/each}}
         </select>
         <br>
         <label for="description">Description:</label>
-        <textarea name="description"></textarea>
+        <textarea name="description">{{pokeUpdate.description}}</textarea>
         <br>
         <button>Update!</button>
     </form>
