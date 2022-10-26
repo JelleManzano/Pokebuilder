@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 8px;
   background-color: beige;
+  font-family: "Press Start 2P";
 }
 
 a {
@@ -70,6 +73,8 @@ h1 {
     rgba(167, 255, 178, 1) 75%,
     rgb(87, 187, 100) 100%
   );
+  text-shadow: 2px 2px black ;
+  text-decoration: solid;
 }
 
 .eachPokemon img {
@@ -92,19 +97,22 @@ h1 {
 .eachStat {
   margin: -10px;
 }
+
+.pokemon-description p {
+  margin: 5px;
+  margin-left: -80px;
+  font-size: 10px;
+}
+
 .title-poke-description {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .maintitle-poke-description {
-  font-size: 16px;
+  font-size: 10px;
   font-weight: bold;
   margin-left: -30px;
-}
-.pokemon-description p {
-  margin: 5px;
-  margin-left: -80px;
 }
 
 .eachStat {
@@ -135,7 +143,7 @@ h1 {
   border: solid 2px black;
   border-radius: 15px;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 10px;
   box-shadow: 3px 2px 5px green;
 }
 

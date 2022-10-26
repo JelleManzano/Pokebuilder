@@ -66,6 +66,7 @@ router.get("/community", isLoggedIn, async (req, res, next) => {
     next(error);
   }
 });
+//get perfil comunidad
 router.get("/community/:id", isLoggedIn, async (req, res, next) => {
   const { id } = req.params;
   try {
@@ -92,6 +93,7 @@ router.get("/community-pokedex", isLoggedIn, async (req, res, next) => {
   }
 });
 
+//get pokedex de los pokemon de la comunidad
 router.get("/community-pokedex/:id", isLoggedIn, async (req, res, next) => {
   const { id } = req.params;
   try {
