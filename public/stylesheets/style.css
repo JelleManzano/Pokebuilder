@@ -19,6 +19,20 @@ h1 {
 nav{
   display: flex;
   justify-content: space-between;
+  background: rgb(18, 200, 28);
+  background: linear-gradient(
+    180deg,
+    rgb(11, 146, 18) 0%,
+    rgba(18, 200, 28, 1) 65%,
+    rgba(167, 255, 178, 1) 65%,
+    rgba(167, 255, 178, 1) 70%,
+    rgba(18, 200, 28, 1) 70%,
+    rgba(18, 200, 28, 1) 75%,
+    rgba(167, 255, 178, 1) 75%,
+    rgb(87, 187, 100) 100%
+  );;
+  margin: -60px -60px 0px -60px;
+  padding: 20px 60px;
 }
 
 nav a{
@@ -168,3 +182,15 @@ nav a{
   margin-left: 45px;
   width: 130px;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* SIGNUP/LOGIN */
