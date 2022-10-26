@@ -3,7 +3,7 @@
 body {
   padding: 50px;
   font: 8px;
-  background-color: beige;
+  background-color: lightgrey;
   font-family: "Press Start 2P";
 }
 
@@ -73,8 +73,8 @@ h1 {
     rgba(167, 255, 178, 1) 75%,
     rgb(87, 187, 100) 100%
   );
-  text-shadow: 2px 2px black ;
-  text-decoration: solid;
+  text-shadow: 2px 3px black, -2px 0 black, 0 2px black, 0 -2px black,
+    1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
 }
 
 .eachPokemon img {
