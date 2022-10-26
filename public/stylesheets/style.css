@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: beige;
 }
 
 a {
@@ -14,14 +15,13 @@ h1 {
 #trainer-details {
   display: flex;
   justify-content: center;
-
 }
 #container {
   display: flex;
   flex-direction: column;
 }
 
-#username a{
+#username a {
   text-decoration: none;
   color: white;
   border: solid 2px black;
@@ -32,6 +32,7 @@ h1 {
 
 #avatar img {
   height: 200px;
+  margin-right: 30px;
 }
 
 #username {
@@ -47,17 +48,31 @@ h1 {
   justify-content: space-between;
 }
 
-.eachPokemon{
+.eachPokemon {
   border: solid 1px black;
-  display:flex;
+  display: flex;
   width: 48%;
   margin: 10px 0px;
   justify-content: space-between;
   border: solid 5px red;
-  box-shadow: 3px 3px 0px rgb(84, 17, 17);
-} 
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 200, 28);
+  background: linear-gradient(
+    180deg,
+    rgb(11, 146, 18) 0%,
+    rgba(18, 200, 28, 1) 65%,
+    rgba(167, 255, 178, 1) 65%,
+    rgba(167, 255, 178, 1) 70%,
+    rgba(18, 200, 28, 1) 70%,
+    rgba(18, 200, 28, 1) 75%,
+    rgba(167, 255, 178, 1) 75%,
+    rgb(87, 187, 100) 100%
+  );
+}
 
-.eachPokemon img{
+.eachPokemon img {
   display: flex;
   height: 100px;
 }
@@ -67,56 +82,65 @@ h1 {
   flex-direction: column;
 }
 
-.pokeStats{
+.pokeStats {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  margin-top: 40px;
 }
 
-.eachStat{
+.eachStat {
   margin: -10px;
 }
-.title-poke-description{
+.title-poke-description {
   font-size: 13px;
   font-weight: bold;
 }
 
-.maintitle-poke-description{
+.maintitle-poke-description {
   font-size: 16px;
   font-weight: bold;
+  margin-left: -30px;
 }
-.pokemon-description p{
+.pokemon-description p {
   margin: 5px;
+  margin-left: -80px;
 }
 
-.eachStat{
+.eachStat {
   font-size: 12px;
   font-weight: bold;
 }
 
-.eachStat span{
+.eachStat span {
   font-weight: 400;
 }
 
-.pokemon-details-buttons{
+.pokemon-details-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.pokemon-details-buttons button{
+.pokemon-details-buttons button {
   width: 90px;
   height: 30px;
-  margin-bottom: 5px;
-  margin: 10px;
-  background-color: blue;
-  color: red;
+  margin-right: 50px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: red;
+  color: white;
   font-weight: bold;
-  border: solid 2px red;
+  border: solid 2px black;
+  border-radius: 15px;
   letter-spacing: 1px;
-  text-transform: uppercase;
   font-size: 14px;
-  box-shadow: 3px 3px 0px rgb(84, 17, 17);
+  box-shadow: 3px 2px 5px green;
+}
+
+.pokemon-profile {
+  margin-top: 30px;
+  margin-left: 45px;
+  width: 130px;
 }

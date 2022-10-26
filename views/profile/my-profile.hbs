@@ -23,7 +23,9 @@
 <div id="pokemonTeam">
   {{#each dbPokemon}}
     <div class="eachPokemon">
-      <img src="{{photo}}" alt="img-poke" />
+      <div class="pokemon-profile">
+        <img src="{{photo}}" alt="img-poke" />
+      </div>
       <div class="pokemon-general">
         <p class="maintitle-poke-description">{{name}}</p>
         <div class="pokemon-description">
@@ -43,10 +45,10 @@
         {{/each}}
       </div>
       <div class="pokemon-details-buttons">
-      <a href="/profile/update-pokemon/{{_id}}"><button> Update</button></a>
-      <form action="/profile/delete/{{_id}}" method="post">
-        <button>Delete</button>
-      </form>
+        <a href="/profile/update-pokemon/{{_id}}"><button> Update</button></a>
+        <form action="/profile/delete/{{_id}}" method="post">
+          <button>Delete</button>
+        </form>
       </div>
     </div>
   {{/each}}
