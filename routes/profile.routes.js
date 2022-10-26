@@ -28,7 +28,16 @@ router.get("/", isLoggedIn, async (req, res, next) => {
 });
 
 router.get("/create", isLoggedIn, async (req, res, next) => {
+  
   try {
+
+    const dbPokemon = await Pokemon.find({
+      trainer: req.session.activeTrainer._id
+    })
+
+    if(dbPokemon.length >= 6){
+      res.redirect("/profile")
+    }
     const pokemonDetails = await axios.get(
       `https://pokeapi.co/api/v2/pokemon?limit=151/`
     );

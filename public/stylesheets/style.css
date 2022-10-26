@@ -13,11 +13,21 @@ h1 {
 
 #trainer-details {
   display: flex;
-  background-color: aqua;
+  justify-content: center;
+
 }
 #container {
   display: flex;
   flex-direction: column;
+}
+
+#username a{
+  text-decoration: none;
+  color: white;
+  border: solid 2px black;
+  background-color: red;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
 #avatar img {
@@ -34,7 +44,7 @@ h1 {
 #pokemonTeam {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .eachPokemon{
@@ -42,15 +52,71 @@ h1 {
   display:flex;
   width: 48%;
   margin: 10px 0px;
+  justify-content: space-between;
+  border: solid 5px red;
+  box-shadow: 3px 3px 0px rgb(84, 17, 17);
 } 
 
-.pokeDescription {
+.eachPokemon img{
+  display: flex;
+  height: 100px;
+}
+
+.pokemon-general {
   display: flex;
   flex-direction: column;
 }
 
 .pokeStats{
   display: flex;
-  flex-direction: row;
-  flex-basis: 33%;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.eachStat{
+  margin: -10px;
+}
+.title-poke-description{
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.maintitle-poke-description{
+  font-size: 16px;
+  font-weight: bold;
+}
+.pokemon-description p{
+  margin: 5px;
+}
+
+.eachStat{
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.eachStat span{
+  font-weight: 400;
+}
+
+.pokemon-details-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-details-buttons button{
+  width: 90px;
+  height: 30px;
+  margin-bottom: 5px;
+  margin: 10px;
+  background-color: blue;
+  color: red;
+  font-weight: bold;
+  border: solid 2px red;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  box-shadow: 3px 3px 0px rgb(84, 17, 17);
 }

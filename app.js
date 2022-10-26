@@ -22,6 +22,15 @@ require("./config")(app);
 const capitalize = require("./utils/capitalize");
 const projectName = "pokebuilder";
 
+app.use((req,res,next) => {
+    if (req.session.activeTrainer === undefined) {
+        res.locals.isTrainerActive = false
+    } else {
+        res.locals.isTrainerActive = true
+    }
+    next()
+})
+
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
 // 👇 Start handling routes here
@@ -31,13 +40,5 @@ app.use("/", indexRoutes);
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
-app.use((req,res,next) => {
-    if (req.session.activeTrainer === undefined) {
-        res.locals.isTrainerActive = false
-    } else {
-        res.locals.isTrainerActive = true
-    }
-    next()
-})
 
 module.exports = app;

@@ -5,11 +5,16 @@ const axios = require("axios");
 const { isLoggedIn } = require("../middlewares/auth.middlewares");
 const Trainer = require("../models/User.model");
 const pokeData = require("../data/pokemon-data.json");
+const capitalize = require("../utils/capitalize")
 
 router.get("/pokedex", async (req, res, next) => {
   try {
+    const pokeClone = JSON.parse(JSON.stringify(pokeData))
+    pokeClone.forEach((eachPokemon) => {
+      eachPokemon.name=capitalize(eachPokemon.name)
+    })
     res.render("app/pokedex.hbs", {
-      pokeData,
+      pokeData: pokeClone
     });
   } catch (error) {
     next(error);
@@ -32,9 +37,13 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
         `https://pokeapi.co/api/v2/pokemon/${parseInt(pokeIndex) - 1}`
       );
     }
-    const pokemonContinue = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon/${parseInt(pokeIndex) + 1}`
-      );
+    let pokemonContinue;
+    if(parseInt(pokeIndex) < 151){
+      pokemonContinue = await axios.get(
+          `https://pokeapi.co/api/v2/pokemon/${parseInt(pokeIndex) + 1}`
+        );
+
+    }
     res.render("app/poke-details.hbs", {
       pokemonDetails,
       pokemonSpecies,
