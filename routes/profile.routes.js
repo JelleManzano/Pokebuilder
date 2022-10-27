@@ -4,20 +4,23 @@ const router = express.Router();
 const { isLoggedIn } = require("../middlewares/auth.middlewares");
 const axios = require("axios");
 const Pokemon = require("../models/pokemon.model");
-const { capitalize } = require("../utils/capitalize");
+const capitalize = require("../utils/capitalize");
 
 //GET /profile
 
 router.get("/", isLoggedIn, async (req, res, next) => {
   try {
-    const trainerDetails = await Trainer.findById(
-      req.session.activeTrainer._id
-    );
+    let trainerDetails = await Trainer.findById(req.session.activeTrainer._id);
 
-    const dbPokemon = await Pokemon.find({
+    let dbPokemon = await Pokemon.find({
       trainer: req.session.activeTrainer._id,
     });
-    const dbClone = JSON
+
+    const dbClone = JSON.parse(JSON.stringify(dbPokemon));
+    // dbClone.forEach((eachPokemon) => {
+    //   eachPokemon.name = capitalize(eachPokemon.name);
+    //   eachPokemon.types = capitalize(eachPokemon.types);
+    // });
     res.render("profile/my-profile.hbs", {
       trainerDetails,
       dbPokemon,
@@ -37,15 +40,30 @@ router.get("/create", isLoggedIn, async (req, res, next) => {
     if (dbPokemon.length >= 6) {
       res.redirect("/profile");
     }
-    const pokemonDetails = await axios.get(
+    let pokemonDetails = await axios.get(
       `https://pokeapi.co/api/v2/pokemon?limit=151/`
     );
-    const pokemonTypes = await axios.get(
+    for (let i = 0; i < pokemonDetails.data.results.length; i++) {
+      pokemonDetails.data.results[i].name = capitalize(
+        pokemonDetails.data.results[i].name
+      );
+    }
+    let pokemonTypes = await axios.get(
       "https://pokeapi.co/api/v2/type?limit=18"
     );
-    const pokemonHabitat = await axios.get(
+    for (let i = 0; i < pokemonTypes.data.results.length; i++) {
+      pokemonTypes.data.results[i].name = capitalize(
+        pokemonTypes.data.results[i].name
+      );
+    }
+    let pokemonHabitat = await axios.get(
       "https://pokeapi.co/api/v2/pokemon-habitat/"
     );
+    for (let i = 0; i < pokemonHabitat.data.results.length; i++) {
+      pokemonHabitat.data.results[i].name = capitalize(
+        pokemonHabitat.data.results[i].name
+      );
+    }
     res.render("profile/create-pkm.hbs", {
       pokemonDetails,
       pokemonTypes,
@@ -63,6 +81,7 @@ router.post("/create", isLoggedIn, async (req, res, next) => {
     const pokemonDetails = await axios.get(
       `https://pokeapi.co/api/v2/pokemon/${pokemon}/`
     );
+
     const newPokemon = await Pokemon.create({
       pokemon,
       name,
@@ -99,7 +118,6 @@ router.get("/update-pokemon/:idPkm", isLoggedIn, async (req, res, next) => {
       pokemonTypes,
       pokemonHabitat,
     });
-  
   } catch (error) {
     next(error);
   }

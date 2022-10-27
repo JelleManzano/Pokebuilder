@@ -27,7 +27,7 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
     let pokemonDetails = await axios.get(
       `https://pokeapi.co/api/v2/pokemon/${pokeIndex}`
     );
-    console.log(pokemonDetails.data.stats);
+    
     pokemonDetails.data.name = capitalize(pokemonDetails.data.name)
    pokemonDetails.data.types[0].type.name = capitalize(pokemonDetails.data.types[0].type.name)
    pokemonDetails.data.types[1].type.name = capitalize(pokemonDetails.data.types[1].type.name)
