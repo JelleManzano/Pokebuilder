@@ -5,11 +5,10 @@ body {
   font: 8px;
   background-color: lightgreynn;
   font-family: "Press Start 2P";
-  margin-top: 0px; 
-  margin-bottom: 0px; 
-  margin-left: 0px; 
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
   margin-right: 0px;
-  
 }
 
 a {
@@ -21,7 +20,7 @@ h1 {
 }
 
 /* NAVBAR */
-nav{
+nav {
   display: flex;
   justify-content: space-between;
   background: rgb(18, 200, 28);
@@ -35,20 +34,19 @@ nav{
     rgba(18, 200, 28, 1) 75%,
     rgba(167, 255, 178, 1) 75%,
     rgb(87, 187, 100) 100%
-  );;
+  );
   margin: -60px -60px 0px -60px;
   padding: 20px 60px;
 }
 
-nav a{
+nav a {
   text-decoration: none;
   color: white;
   text-shadow: 2px 3px black, -2px 0 black, 0 2px black, 0 -2px black,
     1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
-    border-right: solid 5px black;
-    padding-right: 5px;
+  border-right: solid 5px black;
+  padding-right: 5px;
 }
-
 
 #trainer-details {
   display: flex;
@@ -70,7 +68,7 @@ nav a{
   );
   color: white;
   text-shadow: 2px 3px black, -2px 0 black, 0 2px black, 0 -2px black,
-  1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+    1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
 }
 #container {
   display: flex;
@@ -130,7 +128,6 @@ nav a{
     1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
 }
 
-
 .pokemon-general {
   display: flex;
   flex-direction: column;
@@ -143,7 +140,7 @@ nav a{
   justify-content: center;
   margin-top: 40px;
   margin-bottom: 20px;
-  line-height: 15px; 
+  line-height: 15px;
 }
 
 .eachStat {
@@ -151,7 +148,7 @@ nav a{
 }
 
 .eachStat p {
-  font-size: 11px; 
+  font-size: 11px;
 }
 
 .pokemon-description p {
@@ -223,15 +220,6 @@ nav a{
   margin-right: 30px;
 }
 
-
-
-
-
-
-
-
-
-
 /* SIGNUP/LOGIN */
 #signup-main {
   display: flex;
@@ -241,11 +229,11 @@ nav a{
 #signup-main form {
   font-size: 12px;
 }
-#signup-main form input{
+#signup-main form input {
   margin-bottom: 10px;
 }
 
-#signup-main button{
+#signup-main button {
   background-color: red;
   color: white;
   font-weight: bold;
@@ -311,17 +299,17 @@ nav a{
 }
 
 /* INDEX */
-#title{
+#title {
   display: flex;
 
   align-content: center;
 }
 
-#index{
+#index {
   display: flex;
   flex-direction: column;
   text-align: center;
- text-align: center;
+  text-align: center;
 }
 
 /* Create Pkmn */
@@ -333,7 +321,7 @@ nav a{
   background-size: cover;
   height: 93vh;
   width: 97.8vw;
-  margin-bottom: -50px; 
+  margin-bottom: -50px;
 }
 #create-main {
   display: flex;
@@ -342,13 +330,12 @@ nav a{
 
 #create-main form {
   font-size: 12px;
-  
 }
-#create-main form input{
+#create-main form input {
   margin-bottom: 10px;
 }
 
-#create-main button{
+#create-main button {
   background-color: red;
   color: white;
   font-weight: bold;
@@ -387,26 +374,25 @@ nav a{
   text-align: center;
 }
 
- #create form{
-  display:flex;
+#create form {
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
-} 
-
-#create form label{
-  padding-bottom: 10px
 }
 
+#create form label {
+  padding-bottom: 10px;
+}
 
 /* POKEDEX */
 
-.main-pokedex{
+.main-pokedex {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.each-pokedex{
+.each-pokedex {
   border: solid 3px black;
   box-shadow: 3px 3px 0px rgb(5, 1, 1);
   border-radius: 15px 50px 15px 0px;
@@ -432,21 +418,20 @@ nav a{
   text-align: center;
 }
 
-.each-pokedex a{
+.each-pokedex a {
   text-decoration: none;
   color: white;
 }
 
-
 /* Pokemon Update */
 
-#update-main{
+#update-main {
   display: flex;
   justify-content: center;
   padding-top: 100px;
 }
 
-#update-pkm-form{
+#update-pkm-form {
   border: solid 3px black;
   box-shadow: 3px 3px 0px rgb(5, 1, 1);
   border-radius: 15px 50px 15px 0px;
@@ -472,29 +457,28 @@ nav a{
   text-align: center;
 }
 
-#update-pkm-form form{
-  display:flex;
+#update-pkm-form form {
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
-} 
-
-#update-pkm-form form label{
-  padding-bottom: 10px
 }
 
-#card-update-pkm{
+#update-pkm-form form label {
+  padding-bottom: 10px;
+}
+
+#card-update-pkm {
   display: flex;
   flex-direction: column;
 }
 
-#updt-pkm-title{
+#updt-pkm-title {
   font-size: 24px;
 }
 
-
 /* Update Profile */
 
-#card-update-profile{
+#card-update-profile {
   display: flex;
   flex-direction: column;
   border: solid 3px black;
@@ -523,40 +507,40 @@ nav a{
   max-width: 800px;
 }
 
-#card-update-profile form{
+#card-update-profile form {
   display: flex;
   flex-direction: column;
 }
 
-#input-radio{
+#input-radio {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-#input-radio input{
+#input-radio input {
   display: flex;
   justify-content: center;
 }
 
-#card-update-profile form{
-  display:flex;
+#card-update-profile form {
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
-} 
-
-#card-update-profile form label{
-  padding-bottom: 10px
 }
 
-#main-profile-updt{
+#card-update-profile form label {
+  padding-bottom: 10px;
+}
+
+#main-profile-updt {
   display: flex;
   justify-content: center;
   padding-top: 100px;
 }
 
-#card-update-profile form button{
+#card-update-profile form button {
   background-color: red;
   color: white;
   font-weight: bold;
@@ -569,7 +553,7 @@ nav a{
   font-family: "Press Start 2P";
 }
 
-#card-update-profile form input{
+#card-update-profile form input {
   font-weight: bold;
   border: solid 2px black;
   border-radius: 5px;
@@ -580,7 +564,7 @@ nav a{
   font-family: "Press Start 2P";
 }
 
-#card-update-profile form select{
+#card-update-profile form select {
   font-weight: bold;
   border: solid 2px black;
   border-radius: 5px;
@@ -589,4 +573,18 @@ nav a{
   box-shadow: 3px 2px 5px green;
   padding: 5px;
   font-family: "Press Start 2P";
+}
+
+#index-bg video {
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  left:0;
+  position: fixed;
+}
+
+#index-bg img{
+  z-index: 999;
+  position:absolute;
+  margin: 12.5vh 34vw
 }

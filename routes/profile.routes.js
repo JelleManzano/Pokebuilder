@@ -93,6 +93,7 @@ router.post("/create", isLoggedIn, async (req, res, next) => {
       trainer: req.session.activeTrainer,
     });
     res.redirect("/profile");
+    console.log(newPokemon);
   } catch (error) {
     next(error);
   }
