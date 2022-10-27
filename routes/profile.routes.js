@@ -43,27 +43,28 @@ router.get("/create", isLoggedIn, async (req, res, next) => {
     let pokemonDetails = await axios.get(
       `https://pokeapi.co/api/v2/pokemon?limit=151/`
     );
-    for (let i = 0; i < pokemonDetails.data.results.length; i++) {
-      pokemonDetails.data.results[i].name = capitalize(
-        pokemonDetails.data.results[i].name
-      );
-    }
+    // for (let i = 0; i < pokemonDetails.data.results.length; i++) {
+    //   pokemonDetails.data.results[i].name = capitalize(
+    //     pokemonDetails.data.results[i].name
+    //   );
+    // }
     let pokemonTypes = await axios.get(
       "https://pokeapi.co/api/v2/type?limit=18"
     );
-    for (let i = 0; i < pokemonTypes.data.results.length; i++) {
-      pokemonTypes.data.results[i].name = capitalize(
-        pokemonTypes.data.results[i].name
-      );
-    }
+    // for (let i = 0; i < pokemonTypes.data.results.length; i++) {
+    //   pokemonTypes.data.results[i].name = capitalize(
+    //     pokemonTypes.data.results[i].name
+    //   );
+    // }
     let pokemonHabitat = await axios.get(
       "https://pokeapi.co/api/v2/pokemon-habitat/"
     );
-    for (let i = 0; i < pokemonHabitat.data.results.length; i++) {
-      pokemonHabitat.data.results[i].name = capitalize(
-        pokemonHabitat.data.results[i].name
-      );
-    }
+    // for (let i = 0; i < pokemonHabitat.data.results.length; i++) {
+    //   pokemonHabitat.data.results[i].name = capitalize(
+    //     pokemonHabitat.data.results[i].name
+    //   );
+    // }
+    //If only capitalizing didnt break our code... Oh the despair
     res.render("profile/create-pkm.hbs", {
       pokemonDetails,
       pokemonTypes,

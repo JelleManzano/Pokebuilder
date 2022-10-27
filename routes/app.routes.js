@@ -29,7 +29,6 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
       `https://pokeapi.co/api/v2/pokemon/${pokeIndex}`
     );
 
-<<<<<<< HEAD
     // pokemonDetails.data.name = capitalize(pokemonDetails.data.name);
     // pokemonDetails.data.types[0].type.name = capitalize(
     //   pokemonDetails.data.types[0].type.name
@@ -42,37 +41,15 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
     //     pokemonDetails.data.stats[i].stat.name
     //   );
     // }
-=======
-    pokemonDetails.data.name = capitalize(pokemonDetails.data.name);
-    pokemonDetails.data.types[0].type.name = capitalize(
-      pokemonDetails.data.types[0].type.name
-    );
-    pokemonDetails.data.types[1].type.name = capitalize(
-      pokemonDetails.data.types[1].type.name
-    );
-    for (let i = 0; i < pokemonDetails.data.stats.length; i++) {
-      pokemonDetails.data.stats[i].stat.name = capitalize(
-        pokemonDetails.data.stats[i].stat.name
-      );
-    }
->>>>>>> 9ef44bb80ec460b32f0388c8fe8da08b05e0dbf5
 
     let pokemonSpecies = await axios.get(
       `https://pokeapi.co/api/v2/pokemon-species/${pokeIndex}`
     );
-<<<<<<< HEAD
     // pokemonSpecies.data.color.name = capitalize(pokemonSpecies.data.color.name);
     // pokemonSpecies.data.shape.name = capitalize(pokemonSpecies.data.shape.name);
     // pokemonSpecies.data.habitat.name = capitalize(
     //   pokemonSpecies.data.habitat.name
     // );
-=======
-    pokemonSpecies.data.color.name = capitalize(pokemonSpecies.data.color.name);
-    pokemonSpecies.data.shape.name = capitalize(pokemonSpecies.data.shape.name);
-    pokemonSpecies.data.habitat.name = capitalize(
-      pokemonSpecies.data.habitat.name
-    );
->>>>>>> 9ef44bb80ec460b32f0388c8fe8da08b05e0dbf5
     let pokemonMinus;
     if (parseInt(pokeIndex) > 1) {
       pokemonMinus = await axios.get(
