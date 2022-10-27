@@ -1,39 +1,70 @@
 <div>
-    <form action="/profile/update-profile/{{trainerUpdate._id}}" method="POST">
+  <form action="/profile/update-profile/{{trainerUpdate._id}}" method="POST">
     <label for="username">Username:</label>
-    <input type="text" name="username" value="{{trainerUpdate.username}}" required>
-    <br>
+    <input
+      type="text"
+      name="username"
+      value="{{trainerUpdate.username}}"
+      required
+    />
+    <br />
     <label for="email">Email:</label>
-    <input type="text" name="email" value="{{trainerUpdate.email}}" required>
-    <br>
+    <input type="text" name="email" value="{{trainerUpdate.email}}" required />
+    <br />
     <label for="avatar">Avatar:</label>
-    <img src="https://imgur.com/zXwleo1.png" alt="avatar-1">
-    <input type="radio" name="avatar" value="https://imgur.com/zXwleo1.png" checked>
-    <img src="https://imgur.com/DFzYE6N.png" alt="avatar-2">
-    <input type="radio" name="avatar" value="https://imgur.com/DFzYE6N.png">
-    <img src="https://imgur.com/1rGMqV1.png" alt="avatar-1">
-    <input type="radio" name="avatar" value="https://imgur.com/1rGMqV1.png">
-    <img src="https://imgur.com/TyEbmku.png" alt="avatar-1">
-    <input type="radio" name="avatar" value="https://imgur.com/TyEbmku.png">
-    <br>
+    <img src="https://imgur.com/zXwleo1.png" alt="avatar-1" />
+    <input
+      type="radio"
+      name="avatar"
+      value="https://imgur.com/zXwleo1.png"
+      checked
+    />
+    <img src="https://imgur.com/DFzYE6N.png" alt="avatar-2" />
+    <input type="radio" name="avatar" value="https://imgur.com/DFzYE6N.png" />
+    <img src="https://imgur.com/1rGMqV1.png" alt="avatar-1" />
+    <input type="radio" name="avatar" value="https://imgur.com/1rGMqV1.png" />
+    <img src="https://imgur.com/TyEbmku.png" alt="avatar-1" />
+    <input type="radio" name="avatar" value="https://imgur.com/TyEbmku.png" />
+    <img src="https://imgur.com/amoSDDR.png" alt="bug-hunter" />
+    <input type="radio" name="avatar" value="https://imgur.com/amoSDDR.png" />
+    <img src="https://imgur.com/80H99Wz.png" alt="t-rocket-girl" />
+    <input type="radio" name="avatar" value="https://imgur.com/80H99Wz.png" />
+    <img src="https://imgur.com/CSwhXSK.png" alt="t-rocket-boy" />
+    <input type="radio" name="avatar" value="https://imgur.com/CSwhXSK.png" />
+    <img src="https://imgur.com/V5sskJY.png" alt="sabrina" />
+    <input type="radio" name="avatar" value="https://imgur.com/V5sskJY.png" />
+    <img src="https://imgur.com/VhDrnBO.png" alt="ninja" />
+    <input type="radio" name="avatar" value="https://imgur.com/VhDrnBO.png" />
+    <img src="https://imgur.com/cQ7Jk2X.png" alt="trainer" />
+    <input type="radio" name="avatar" value="https://imgur.com/cQ7Jk2X.png" />
+    <img src="https://imgur.com/TkGReUA.png" alt="trainer-girl" />
+    <input type="radio" name="avatar" value="https://imgur.com/TkGReUA.png" />
+    <img src="https://imgur.com/FDY4Tld.png" alt="giovanni" />
+    <input type="radio" name="avatar" value="" />
+    <img src="https://imgur.com/71pbujn.png" alt="girlscout" />
+    <input type="radio" name="avatar" value="https://imgur.com/71pbujn.png" />
+    <br />
     <label for="village">Village:</label>
-        <select name="village">
-            <option value="Pallet Town">Pallet Town</option>
-            <option value="Viridian City">Viridian City</option>
-            <option value="Pewter City">Pewter City</option>
-            <option value="Cerulean City">Cerulean City</option>
-            <option value="Vermillion City">Vermillion City</option>
-            <option value="Lavender City">Lavender City</option>
-            <option value="Celadon City">Celadon City</option>
-            <option value="Saffron City">Saffron City</option>
-            <option value="Fuchsia City">Fuchsia City</option>
-            <option value="Cinnabar Island">Cinnabar Island</option>
-        </select>
-    <br>
+    <select name="village">
+      <option value="Pallet Town">Pallet Town</option>
+      <option value="Viridian City">Viridian City</option>
+      <option value="Pewter City">Pewter City</option>
+      <option value="Cerulean City">Cerulean City</option>
+      <option value="Vermillion City">Vermillion City</option>
+      <option value="Lavender City">Lavender City</option>
+      <option value="Celadon City">Celadon City</option>
+      <option value="Saffron City">Saffron City</option>
+      <option value="Fuchsia City">Fuchsia City</option>
+      <option value="Cinnabar Island">Cinnabar Island</option>
+    </select>
+    <br />
     <button>Update your profile!</button>
 
-    </form>
-    <form action="/profile/update-profile/{{trainerUpdate._id}}/delete" method="POST">
+  </form>
+  <form
+    action="/profile/update-profile/{{trainerUpdate._id}}/delete"
+    method="POST"
+  >
     <button>Delete account!</button>
-    </form>
+  </form>
 </div>

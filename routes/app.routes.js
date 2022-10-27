@@ -5,16 +5,16 @@ const axios = require("axios");
 const { isLoggedIn } = require("../middlewares/auth.middlewares");
 const Trainer = require("../models/User.model");
 const pokeData = require("../data/pokemon-data.json");
-const capitalize = require("../utils/capitalize")
+const capitalize = require("../utils/capitalize");
 
 router.get("/pokedex", async (req, res, next) => {
   try {
-    const pokeClone = JSON.parse(JSON.stringify(pokeData))
+    const pokeClone = JSON.parse(JSON.stringify(pokeData));
     pokeClone.forEach((eachPokemon) => {
-      eachPokemon.name=capitalize(eachPokemon.name)
-    })
+      eachPokemon.name = capitalize(eachPokemon.name);
+    });
     res.render("app/pokedex.hbs", {
-      pokeData: pokeClone
+      pokeData: pokeClone,
     });
   } catch (error) {
     next(error);
@@ -38,18 +38,19 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
       );
     }
     let pokemonContinue;
-    if(parseInt(pokeIndex) < 151){
+    if (parseInt(pokeIndex) < 151) {
       pokemonContinue = await axios.get(
-          `https://pokeapi.co/api/v2/pokemon/${parseInt(pokeIndex) + 1}`
-        );
-
+        `https://pokeapi.co/api/v2/pokemon/${parseInt(pokeIndex) + 1}`
+      );
     }
+
     res.render("app/poke-details.hbs", {
       pokemonDetails,
       pokemonSpecies,
       pokemonMinus,
       pokemonContinue,
     });
+    console.log(pokemonDetails.data.name);
   } catch (error) {
     next(error);
   }
@@ -66,6 +67,7 @@ router.get("/community", isLoggedIn, async (req, res, next) => {
     next(error);
   }
 });
+
 //get perfil comunidad
 router.get("/community/:id", isLoggedIn, async (req, res, next) => {
   const { id } = req.params;

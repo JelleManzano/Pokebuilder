@@ -5,6 +5,11 @@ body {
   font: 8px;
   background-color: lightgreynn;
   font-family: "Press Start 2P";
+  margin-top: 0px; 
+  margin-bottom: 0px; 
+  margin-left: 0px; 
+  margin-right: 0px;
+  
 }
 
 a {
@@ -83,7 +88,7 @@ nav a{
 
 #avatar img {
   height: 200px;
-  margin-right: 30px;
+  margin-right: 100px;
 }
 
 #username {
@@ -129,6 +134,7 @@ nav a{
 .pokemon-general {
   display: flex;
   flex-direction: column;
+  max-width: 25%;
 }
 
 .pokeStats {
@@ -136,8 +142,8 @@ nav a{
   flex-direction: column;
   justify-content: center;
   margin-top: 40px;
-  margin-bottom: 15px;
- 
+  margin-bottom: 20px;
+  line-height: 15px; 
 }
 
 .eachStat {
@@ -152,6 +158,7 @@ nav a{
   margin: 5px;
   margin-left: -80px;
   font-size: 10px;
+  line-height: 15px;
 }
 
 .title-poke-description {
@@ -200,6 +207,7 @@ nav a{
 .pokemon-profile {
   width: 130px;
   padding-right: 20px;
+  margin: auto 0px;
 }
 
 .pokemon-profile img {
@@ -225,3 +233,166 @@ nav a{
 
 
 /* SIGNUP/LOGIN */
+#signup-main {
+  display: flex;
+  justify-content: space-around;
+}
+
+#signup-main form {
+  font-size: 12px;
+}
+#signup-main form input{
+  margin-bottom: 10px;
+}
+
+#signup-main button{
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: solid 2px black;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  box-shadow: 3px 2px 5px green;
+  padding: 5px;
+  font-family: "Press Start 2P";
+}
+
+#sign-up {
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 45, 200);
+  background: linear-gradient(
+    180deg,
+    rgb(6, 41, 155) 0%,
+    rgb(48, 101, 245) 65%,
+    rgb(25, 203, 209) 65%,
+    rgb(33, 245, 234) 70%,
+    rgb(11, 79, 168) 70%,
+    rgb(21, 117, 226) 75%,
+    rgb(25, 203, 209) 75%,
+    rgb(3, 245, 234) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 15px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#log-in {
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 45, 200);
+  background: linear-gradient(
+    180deg,
+    rgb(6, 41, 155) 0%,
+    rgb(48, 101, 245) 65%,
+    rgb(25, 203, 209) 65%,
+    rgb(33, 245, 234) 70%,
+    rgb(11, 79, 168) 70%,
+    rgb(21, 117, 226) 75%,
+    rgb(25, 203, 209) 75%,
+    rgb(3, 245, 234) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 15px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* INDEX */
+#title{
+  display: flex;
+
+  align-content: center;
+}
+
+#index{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+ text-align: center;
+}
+
+/* Create Pkmn */
+
+#supa-create {
+  background-image: url("https://imgur.com/jifIdFh.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 93vh;
+  width: 97.8vw;
+  margin-bottom: -50px; 
+}
+#create-main {
+  display: flex;
+  justify-content: space-around;
+}
+
+#create-main form {
+  font-size: 12px;
+  
+}
+#create-main form input{
+  margin-bottom: 10px;
+}
+
+#create-main button{
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: solid 2px black;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  box-shadow: 3px 2px 5px green;
+  padding: 5px;
+  font-family: "Press Start 2P";
+}
+
+#create {
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 200, 28);
+  background: linear-gradient(
+    180deg,
+    rgb(11, 146, 18) 0%,
+    rgba(18, 200, 28, 1) 65%,
+    rgba(167, 255, 178, 1) 65%,
+    rgba(167, 255, 178, 1) 70%,
+    rgba(18, 200, 28, 1) 70%,
+    rgba(18, 200, 28, 1) 75%,
+    rgba(167, 255, 178, 1) 75%,
+    rgb(87, 187, 100) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 30px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+ #create form{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+} 
+
+#create form label{
+  padding-bottom: 10px
+}
