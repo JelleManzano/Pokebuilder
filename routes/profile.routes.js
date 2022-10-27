@@ -17,7 +17,7 @@ router.get("/", isLoggedIn, async (req, res, next) => {
     const dbPokemon = await Pokemon.find({
       trainer: req.session.activeTrainer._id,
     });
-
+    const dbClone = JSON
     res.render("profile/my-profile.hbs", {
       trainerDetails,
       dbPokemon,
