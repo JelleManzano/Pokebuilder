@@ -1,9 +1,11 @@
-<div>
-    <div>
-        <h3>Your current Pokemon:</h3>
+
+<div id="update-main">
+    <div id="card-update-pkm">
+        <h3 id="updt-pkm-title">Your current Pokemon:</h3>
         <h5>{{pokeUpdate.name}}</h5>
-        <img src="{{pokeUpdate.photo}}" alt="your-poke-photo">
+        <img src="{{pokeUpdate.photo}}" alt="your-poke-photo" width="350px">
     </div>
+    <div id="update-pkm-form">
     <form action="/profile/update-pokemon/{{pokeUpdate._id}}" method="POST">
         <label for="pokemon">Change your base Pokemon:</label>
         <select name="pokemon" >
@@ -40,4 +42,5 @@
         <br>
         <button>Update!</button>
     </form>
+    </div>
 </div>

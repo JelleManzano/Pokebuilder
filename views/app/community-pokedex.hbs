@@ -1,5 +1,6 @@
-<div>
+<div class="main-pokedex">
     {{#each communityDex}}
+    <div class="each-pokedex">
     <a href="/app/community-pokedex/{{_id}}">
     <img src="{{photo}}" alt="poke-photo">
     <p>{{name}}</p>
@@ -8,5 +9,6 @@
     <a href="/app/community/{{trainer._id}}">
     <p>@{{trainer.username}}</p>
     </a>
+    </div>
     {{/each}}
 </div>

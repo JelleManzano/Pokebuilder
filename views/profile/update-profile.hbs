@@ -1,4 +1,7 @@
-<div>
+<div id="main-profile-updt">
+
+
+<div id="card-update-profile">
   <form action="/profile/update-profile/{{trainerUpdate._id}}" method="POST">
     <label for="username">Username:</label>
     <input
@@ -12,37 +15,39 @@
     <input type="text" name="email" value="{{trainerUpdate.email}}" required />
     <br />
     <label for="avatar">Avatar:</label>
-    <img src="https://imgur.com/zXwleo1.png" alt="avatar-1" />
+    <div id="input-radio">
+    <img src="https://imgur.com/zXwleo1.png" alt="avatar-1"  height="80px" width="80px"/>
     <input
       type="radio"
       name="avatar"
       value="https://imgur.com/zXwleo1.png"
       checked
     />
-    <img src="https://imgur.com/DFzYE6N.png" alt="avatar-2" />
-    <input type="radio" name="avatar" value="https://imgur.com/DFzYE6N.png" />
-    <img src="https://imgur.com/1rGMqV1.png" alt="avatar-1" />
+    <img src="https://imgur.com/DFzYE6N.png" alt="avatar-2" height="80px" width="80px"/>
+    <input type="radio" name="avatar" value="https://imgur.com/DFzYE6N.png"/>
+    <img src="https://imgur.com/1rGMqV1.png" alt="avatar-1" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="https://imgur.com/1rGMqV1.png" />
-    <img src="https://imgur.com/TyEbmku.png" alt="avatar-1" />
+    <img src="https://imgur.com/TyEbmku.png" alt="avatar-1" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="https://imgur.com/TyEbmku.png" />
-    <img src="https://imgur.com/amoSDDR.png" alt="bug-hunter" />
+    <img src="https://imgur.com/amoSDDR.png" alt="bug-hunter" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="https://imgur.com/amoSDDR.png" />
-    <img src="https://imgur.com/80H99Wz.png" alt="t-rocket-girl" />
+    <img src="https://imgur.com/80H99Wz.png" alt="t-rocket-girl" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="https://imgur.com/80H99Wz.png" />
-    <img src="https://imgur.com/CSwhXSK.png" alt="t-rocket-boy" />
+    <img src="https://imgur.com/CSwhXSK.png" alt="t-rocket-boy" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="https://imgur.com/CSwhXSK.png" />
-    <img src="https://imgur.com/V5sskJY.png" alt="sabrina" />
+    <img src="https://imgur.com/V5sskJY.png" alt="sabrina" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="https://imgur.com/V5sskJY.png" />
-    <img src="https://imgur.com/VhDrnBO.png" alt="ninja" />
+    <img src="https://imgur.com/VhDrnBO.png" alt="ninja" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="https://imgur.com/VhDrnBO.png" />
-    <img src="https://imgur.com/cQ7Jk2X.png" alt="trainer" />
+    <img src="https://imgur.com/cQ7Jk2X.png" alt="trainer" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="https://imgur.com/cQ7Jk2X.png" />
-    <img src="https://imgur.com/TkGReUA.png" alt="trainer-girl" />
+    <img src="https://imgur.com/TkGReUA.png" alt="trainer-girl" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="https://imgur.com/TkGReUA.png" />
-    <img src="https://imgur.com/FDY4Tld.png" alt="giovanni" />
+    <img src="https://imgur.com/FDY4Tld.png" alt="giovanni" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="" />
-    <img src="https://imgur.com/71pbujn.png" alt="girlscout" />
+    <img src="https://imgur.com/71pbujn.png" alt="girlscout" height="80px" width="80px"/>
     <input type="radio" name="avatar" value="https://imgur.com/71pbujn.png" />
+    </div>
     <br />
     <label for="village">Village:</label>
     <select name="village">
@@ -67,4 +72,5 @@
   >
     <button>Delete account!</button>
   </form>
+</div>
 </div>
