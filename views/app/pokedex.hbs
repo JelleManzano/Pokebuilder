@@ -1,8 +1,10 @@
-<div>
+<div id="main-pokedex">
     {{#each pokeData}}
+    <div class="each-pokedex">
     <a href="/app/pokedex/{{id}}">
-    <img src="{{url}}" alt="poke-pic">
+    <img src="{{url}}" alt="poke-pic" height="150px">
     <p>{{name}}</p>
     </a>
+    </div>
     {{/each}}
 </div>
