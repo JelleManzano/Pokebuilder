@@ -66,11 +66,11 @@ router.post("/create", async (req, res, next) => {
       password1: hashPassword,
     };
     await Trainer.create(newTrainer);
-    const trainerExists = await Trainer.findOne({username: username})
-    req.session.activeTrainer = trainerExists
+    const trainerExists = await Trainer.findOne({ username: username });
+    req.session.activeTrainer = trainerExists;
     req.session.save(() => {
-        res.redirect(`/profile/update-profile/${trainerExists._id}`)
-    })
+      res.redirect(`/profile/update-profile/${trainerExists._id}`);
+    });
   } catch (error) {
     next(error);
   }
@@ -78,47 +78,49 @@ router.post("/create", async (req, res, next) => {
 
 //post route for the login
 router.post("/", async (req, res, next) => {
-    const {username, password1} = req.body;
+  const { username, password1 } = req.body;
 
-    if (username === "" || password1 ==="") {
-        res.render("auth/sign-login.hbs", {
-            errorLogin: "Wrong Trainer alias or password",
-        })
-        return;
+  if (username === "" || password1 === "") {
+    res.render("auth/sign-login.hbs", {
+      errorLogin: "Wrong Trainer alias or password",
+    });
+    return;
+  }
+  //verify that user exists, verify correct password, implement a session system
+  try {
+    const trainerExists = await Trainer.findOne({ username: username });
+    if (trainerExists === null) {
+      res.render("auth/sign-login.hbs", {
+        errorLogin: "Wrong Trainer alias or password",
+      });
+      return;
     }
-    //verify that user exists, verify correct password, implement a session system
-   try {
-    const trainerExists = await Trainer.findOne({username: username})
-    if(trainerExists === null) {
-        res.render("auth/sign-login.hbs", {
-            errorLogin: "Wrong Trainer alias or password"
-        })
-        return;
-    }
-    console.log(trainerExists)
-    const correctPassword = await bcrypt.compare(password1, trainerExists.password1)
+    console.log(trainerExists);
+    const correctPassword = await bcrypt.compare(
+      password1,
+      trainerExists.password1
+    );
 
     if (correctPassword === false) {
-        res.render("auth/sign-login.hbs", {
-            errorLogin: "Wrong Trainer alias or password"
-        })
-        return;
+      res.render("auth/sign-login.hbs", {
+        errorLogin: "Wrong Trainer alias or password",
+      });
+      return;
     }
-    req.session.activeTrainer = trainerExists
+    req.session.activeTrainer = trainerExists;
     req.session.save(() => {
-        res.redirect("/profile")
-    })
-    console.log(req.session)
-   } catch (error) {
-    next(error)
-   }
- 
+      res.redirect("/profile");
+    });
+    console.log(req.session);
+  } catch (error) {
+    next(error);
+  }
 });
 
-router.get("/logout", (req,res,next) => {
-  req.session.destroy(()=>{
-    res.redirect("/")
-  })
-})
+router.get("/logout", (req, res, next) => {
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
+});
 
 module.exports = router;
