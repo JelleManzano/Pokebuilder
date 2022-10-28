@@ -94,7 +94,6 @@ router.post("/create", isLoggedIn, async (req, res, next) => {
       trainer: req.session.activeTrainer,
     });
     res.redirect("/profile");
-    console.log(newPokemon);
   } catch (error) {
     next(error);
   }
@@ -167,7 +166,6 @@ router.get("/update-profile/:id", async (req, res, next) => {
     res.render("profile/update-profile.hbs", {
       trainerUpdate,
     });
-    console.log(trainerUpdate);
   } catch (error) {
     next(error);
   }

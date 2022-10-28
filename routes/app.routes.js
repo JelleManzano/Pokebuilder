@@ -68,7 +68,7 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
       pokemonMinus,
       pokemonContinue,
     });
-    console.log(pokemonDetails);
+
   } catch (error) {
     next(error);
   }

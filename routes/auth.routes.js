@@ -95,7 +95,6 @@ router.post("/", async (req, res, next) => {
       });
       return;
     }
-    console.log(trainerExists);
     const correctPassword = await bcrypt.compare(
       password1,
       trainerExists.password1
@@ -111,7 +110,6 @@ router.post("/", async (req, res, next) => {
     req.session.save(() => {
       res.redirect("/profile");
     });
-    console.log(req.session);
   } catch (error) {
     next(error);
   }

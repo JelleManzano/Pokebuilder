@@ -3,12 +3,9 @@
 body {
   padding: 50px;
   font: 8px;
-  background-color: lightgreynn;
+  background-color: white;
   font-family: "Press Start 2P";
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
+  left: 0;
 }
 
 a {
@@ -48,6 +45,17 @@ nav a {
   padding-right: 5px;
 }
 
+#profile-bg {
+  background-image: url("https://imgur.com/RUJ3YFM.jpg");
+  background-size: cover;
+  margin-left: -60px;
+  margin-right: -60px;
+  margin-bottom: -60px;
+  align-items: center;
+  height: 95vh;
+  margin-top: -60px
+  
+}
 #trainer-details {
   display: flex;
   justify-content: center;
@@ -100,6 +108,7 @@ nav a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 30px;
 }
 
 .eachPokemon {
@@ -403,6 +412,11 @@ nav a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-image: url("https://imgur.com/RK4Tr8v.jpg");
+  background-size: auto;
+  margin-left: -60px;
+  margin-right: -60px;
+  margin-bottom: -60px;
 }
 
 .each-pokedex {
@@ -605,7 +619,19 @@ nav a {
 /* Pokemon details */
 #main-pkm-details{
   display: flex;
+<<<<<<< HEAD
   flex-direction: column;
+=======
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-image:url("https://imgur.com/wBzJf1p.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: -60px;
+  margin-right: -60px;
+  margin-bottom: -60px;
+  height: 100vh;
+>>>>>>> 24e5437bb95735e9d5506560247c61c2a24a4680
 }
 
 #pkm-details-title{
@@ -635,7 +661,32 @@ nav a {
   margin: 80px 20px 20px 20px;
 }
 
+<<<<<<< HEAD
 #table-one{
+=======
+.each-trainer a {
+  color: white;
+}
+
+.each-trainer h5 {
+  padding-top: 30px;
+}
+
+/* community pokedex */
+.community-pokedex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-image: url("https://imgur.com/RK4Tr8v.jpg");
+  background-size: auto;
+  margin-left: -60px;
+  margin-right: -60px;
+  margin-bottom: -60px;
+ 
+}
+
+.each-comm-pokedex {
+>>>>>>> 24e5437bb95735e9d5506560247c61c2a24a4680
   border: solid 3px black;
   box-shadow: 3px 3px 0px rgb(5, 1, 1);
   border-radius: 15px 50px 15px 0px;
@@ -667,6 +718,7 @@ nav a {
   flex-direction: row;
 }
 
+<<<<<<< HEAD
 #types-row p {
   padding-right: 15px;
 }
@@ -677,6 +729,47 @@ nav a {
 }
 
 #table-two{
+=======
+/* Pokemon details */
+#main-pkm-details {
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://imgur.com/RK4Tr8v.jpg");
+  background-size: cover;
+  margin-left: -60px;
+  margin-right: -60px;
+  margin-bottom: -60px;
+}
+
+#pkm-details-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 45, 200);
+  background: linear-gradient(
+    180deg,
+    rgb(6, 41, 155) 0%,
+    rgb(48, 101, 245) 65%,
+    rgb(25, 203, 209) 65%,
+    rgb(33, 245, 234) 70%,
+    rgb(11, 79, 168) 70%,
+    rgb(21, 117, 226) 75%,
+    rgb(25, 203, 209) 75%,
+    rgb(3, 245, 234) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 30px;
+  margin: 10px 20px 20px 20px;
+}
+
+#table-one {
+>>>>>>> 24e5437bb95735e9d5506560247c61c2a24a4680
   border: solid 3px black;
   box-shadow: 3px 3px 0px rgb(5, 1, 1);
   border-radius: 15px 50px 15px 0px;
@@ -696,15 +789,164 @@ nav a {
   text-shadow: 2px 2px black;
   text-decoration: solid;
   padding: 30px;
+<<<<<<< HEAD
   margin-top: 80px;
+=======
+  margin-top: 40px;
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  flex-wrap: wrap;
+}
+
+#types-row {
+  display: flex;
+  flex-direction: row;
+}
+
+#types-row p {
+  padding-right: 15px;
+}
+
+#types-div {
+  display: flex;
+  flex-direction: row;
+}
+
+#table-two {
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 200, 28);
+  background: linear-gradient(
+    180deg,
+    rgb(11, 146, 18) 0%,
+    rgba(18, 200, 28, 1) 65%,
+    rgba(167, 255, 178, 1) 65%,
+    rgba(167, 255, 178, 1) 70%,
+    rgba(18, 200, 28, 1) 70%,
+    rgba(18, 200, 28, 1) 75%,
+    rgba(167, 255, 178, 1) 75%,
+    rgb(87, 187, 100) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 30px;
+  margin-top: 40px;
+  margin-right: 30px;
+>>>>>>> 24e5437bb95735e9d5506560247c61c2a24a4680
   display: flex;
   flex-direction: column;
   width: 30%;
   flex-wrap: wrap;
 }
 
+<<<<<<< HEAD
 #tables{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+=======
+#tables {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#pokemon-navigator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+#pokemon-navigator a {
+  color: black;
+}
+
+#pokemon-navigator img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 60px;
+}
+
+/* Community pkm details */
+#comm-pkm-details {
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://imgur.com/RK4Tr8v.jpg");
+  background-size: cover;
+  margin-left: -60px;
+  margin-right: -60px;
+  margin-bottom: -60px;
+  align-items: center;
+  height: 95vh;
+}
+
+#comm-pkm-details-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 45, 200);
+  background: linear-gradient(
+    180deg,
+    rgb(6, 41, 155) 0%,
+    rgb(48, 101, 245) 65%,
+    rgb(25, 203, 209) 65%,
+    rgb(33, 245, 234) 70%,
+    rgb(11, 79, 168) 70%,
+    rgb(21, 117, 226) 75%,
+    rgb(25, 203, 209) 75%,
+    rgb(3, 245, 234) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 30px;
+  margin: 10px 20px 20px 20px;
+  width: 95%;
+  margin-top: 50px;
+}
+
+#table-general {
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 200, 28);
+  background: linear-gradient(
+    180deg,
+    rgb(11, 146, 18) 0%,
+    rgba(18, 200, 28, 1) 65%,
+    rgba(167, 255, 178, 1) 65%,
+    rgba(167, 255, 178, 1) 70%,
+    rgba(18, 200, 28, 1) 70%,
+    rgba(18, 200, 28, 1) 75%,
+    rgba(167, 255, 178, 1) 75%,
+    rgb(87, 187, 100) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 10px;
+  margin-top: 100px;
+  margin-left: 25px;
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#table-general div {
+  margin: 25px;
+}
+>>>>>>> 24e5437bb95735e9d5506560247c61c2a24a4680
