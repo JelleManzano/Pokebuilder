@@ -270,6 +270,12 @@ nav a {
   display: flex;
   flex-direction: column;
   text-align: center;
+  min-width: 500px;
+}
+
+#sign-up form {
+  display: flex;
+  flex-direction: column;
 }
 
 #log-in {
@@ -296,6 +302,13 @@ nav a {
   display: flex;
   flex-direction: column;
   text-align: center;
+  min-width: 500px;
+}
+
+#log-in form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
 }
 
 /* INDEX */
@@ -579,12 +592,95 @@ nav a {
   object-fit: cover;
   height: 100vh;
   width: 100vw;
-  left:0;
+  left: 0;
   position: fixed;
 }
 
-#index-bg img{
+#index-bg img {
   z-index: 999;
-  position:absolute;
-  margin: 12.5vh 34vw
+  position: absolute;
+  margin: 12.5vh 34vw;
+}
+
+/* Community */
+.main-community {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.each-trainer {
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 45, 200);
+  background: linear-gradient(
+    180deg,
+    rgb(6, 41, 155) 0%,
+    rgb(48, 101, 245) 65%,
+    rgb(25, 203, 209) 65%,
+    rgb(33, 245, 234) 70%,
+    rgb(11, 79, 168) 70%,
+    rgb(21, 117, 226) 75%,
+    rgb(25, 203, 209) 75%,
+    rgb(3, 245, 234) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 30px;
+  margin: 80px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-width: 80px;
+  max-width: 80px;
+  max-height: 120px;
+}
+
+.each-trainer a {
+  color: white;
+}
+
+.each-trainer h5{
+  padding-top: 30px;
+}
+
+/* community pokedex */
+.community-pokedex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.each-comm-pokedex {
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 200, 28);
+  background: linear-gradient(
+    180deg,
+    rgb(11, 146, 18) 0%,
+    rgba(18, 200, 28, 1) 65%,
+    rgba(167, 255, 178, 1) 65%,
+    rgba(167, 255, 178, 1) 70%,
+    rgba(18, 200, 28, 1) 70%,
+    rgba(18, 200, 28, 1) 75%,
+    rgba(167, 255, 178, 1) 75%,
+    rgb(87, 187, 100) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 30px;
+  margin: 80px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-width: 150px;
+  max-width: 200px;
+}
+
+.each-comm-pokedex a {
+  color: white;
 }
