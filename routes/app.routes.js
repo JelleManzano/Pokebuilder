@@ -9,11 +9,10 @@ const capitalize = require("../utils/capitalize");
 
 router.get("/pokedex", async (req, res, next) => {
   try {
-    // const pokeClone = JSON.parse(JSON.stringify(pokeData));
-    // pokeClone.forEach((eachPokemon) => {
-    //   eachPokemon.name = capitalize(eachPokemon.name);
-    // });
-    //):
+    const pokeClone = JSON.parse(JSON.stringify(pokeData));
+    pokeClone.forEach((eachPokemon) => {
+      eachPokemon.name = capitalize(eachPokemon.name);
+    });
     res.render("app/pokedex.hbs", {
       pokeData: pokeClone,
     });
@@ -42,6 +41,7 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
     //     pokemonDetails.data.stats[i].stat.name
     //   );
     // }
+    //): Sad times
 
     let pokemonSpecies = await axios.get(
       `https://pokeapi.co/api/v2/pokemon-species/${pokeIndex}`
@@ -51,7 +51,6 @@ router.get("/pokedex/:pokeIndex", async (req, res, next) => {
     // pokemonSpecies.data.habitat.name = capitalize(
     //   pokemonSpecies.data.habitat.name
     // );
-    //Oh the despair of something not working even being writen nicely
     let pokemonMinus;
     if (parseInt(pokeIndex) > 1) {
       pokemonMinus = await axios.get(
