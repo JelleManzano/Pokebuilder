@@ -9,10 +9,11 @@ const capitalize = require("../utils/capitalize");
 
 router.get("/pokedex", async (req, res, next) => {
   try {
-    const pokeClone = JSON.parse(JSON.stringify(pokeData));
-    pokeClone.forEach((eachPokemon) => {
-      eachPokemon.name = capitalize(eachPokemon.name);
-    });
+    // const pokeClone = JSON.parse(JSON.stringify(pokeData));
+    // pokeClone.forEach((eachPokemon) => {
+    //   eachPokemon.name = capitalize(eachPokemon.name);
+    // });
+    //):
     res.render("app/pokedex.hbs", {
       pokeData: pokeClone,
     });
