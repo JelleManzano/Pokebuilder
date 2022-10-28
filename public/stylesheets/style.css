@@ -588,3 +588,110 @@ nav a {
   position:absolute;
   margin: 12.5vh 34vw
 }
+
+/* Pokemon details */
+#main-pkm-details{
+  display: flex;
+  flex-direction: column;
+}
+
+#pkm-details-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 45, 200);
+  background: linear-gradient(
+    180deg,
+    rgb(6, 41, 155) 0%,
+    rgb(48, 101, 245) 65%,
+    rgb(25, 203, 209) 65%,
+    rgb(33, 245, 234) 70%,
+    rgb(11, 79, 168) 70%,
+    rgb(21, 117, 226) 75%,
+    rgb(25, 203, 209) 75%,
+    rgb(3, 245, 234) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 30px;
+  margin: 80px 20px 20px 20px;
+}
+
+#table-one{
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 200, 28);
+  background: linear-gradient(
+    180deg,
+    rgb(11, 146, 18) 0%,
+    rgba(18, 200, 28, 1) 65%,
+    rgba(167, 255, 178, 1) 65%,
+    rgba(167, 255, 178, 1) 70%,
+    rgba(18, 200, 28, 1) 70%,
+    rgba(18, 200, 28, 1) 75%,
+    rgba(167, 255, 178, 1) 75%,
+    rgb(87, 187, 100) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 30px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  flex-wrap: wrap;
+}
+
+#types-row{
+  display: flex;
+  flex-direction: row;
+}
+
+#types-row p {
+  padding-right: 15px;
+}
+
+#types-div{
+  display: flex;
+  flex-direction: row;
+}
+
+#table-two{
+  border: solid 3px black;
+  box-shadow: 3px 3px 0px rgb(5, 1, 1);
+  border-radius: 15px 50px 15px 0px;
+  color: white;
+  background: rgb(18, 200, 28);
+  background: linear-gradient(
+    180deg,
+    rgb(11, 146, 18) 0%,
+    rgba(18, 200, 28, 1) 65%,
+    rgba(167, 255, 178, 1) 65%,
+    rgba(167, 255, 178, 1) 70%,
+    rgba(18, 200, 28, 1) 70%,
+    rgba(18, 200, 28, 1) 75%,
+    rgba(167, 255, 178, 1) 75%,
+    rgb(87, 187, 100) 100%
+  );
+  text-shadow: 2px 2px black;
+  text-decoration: solid;
+  padding: 30px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  flex-wrap: wrap;
+}
+
+#tables{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

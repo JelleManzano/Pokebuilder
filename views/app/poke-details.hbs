@@ -1,14 +1,18 @@
-<div>
-  <img src="{{pokemonDetails.data.sprites.front_default}}" alt="" />
-</div>
-<div>
+<div id="main-pkm-details">
+<div id="pkm-details-title">
+  <img src="{{pokemonDetails.data.sprites.front_default}}" height="150px" alt=""/>
   <h2>#{{pokemonDetails.data.id}} - {{pokemonDetails.data.name}}</h2>
-  <p></p>
 </div>
-<div>
+<div id="tables">
+<div id="table-one">
+  <div id="types-div">
+  <p>Types:</p>
+  <div id="types-row">
   {{#each pokemonDetails.data.types}}
-    <p>Type:{{type.name}}</p>
+    <p>{{type.name}}</p>
   {{/each}}
+  </div>
+  </div>
   <p>Weight:{{pokemonDetails.data.weight}}</p>
   <p>Height:{{pokemonDetails.data.height}}</p>
   <p>Color:{{pokemonSpecies.data.color.name}}</p>
@@ -16,10 +20,11 @@
   <p>Habitat:{{pokemonSpecies.data.habitat.name}}</p>
   <p>Pokedex entry:{{pokemonSpecies.data.flavor_text_entries.2.flavor_text}}</p>
 </div>
-<div>
+<div id="table-two">
   {{#each pokemonDetails.data.stats}}
     <p>{{stat.name}}:{{base_stat}}</p>
   {{/each}}
+</div>
 </div>
 <div>
   <div>
@@ -39,4 +44,5 @@
       />
       <p>#{{pokemonContinue.data.id}} - {{pokemonContinue.data.name}}</p></a>
   {{/if}}
+</div>
 </div>
