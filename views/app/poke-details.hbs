@@ -1,42 +1,52 @@
-<div>
-  <img src="{{pokemonDetails.data.sprites.front_default}}" alt="" />
-</div>
-<div>
-  <h2>#{{pokemonDetails.data.id}} - {{pokemonDetails.data.name}}</h2>
-  <p></p>
-</div>
-<div>
-  {{#each pokemonDetails.data.types}}
-    <p>Type:{{type.name}}</p>
-  {{/each}}
-  <p>Weight:{{pokemonDetails.data.weight}}</p>
-  <p>Height:{{pokemonDetails.data.height}}</p>
-  <p>Color:{{pokemonSpecies.data.color.name}}</p>
-  <p>Form:{{pokemonSpecies.data.shape.name}}</p>
-  <p>Habitat:{{pokemonSpecies.data.habitat.name}}</p>
-  <p>Pokedex entry:{{pokemonSpecies.data.flavor_text_entries.2.flavor_text}}</p>
-</div>
-<div>
-  {{#each pokemonDetails.data.stats}}
-    <p>{{stat.name}}:{{base_stat}}</p>
-  {{/each}}
-</div>
-<div>
-  <div>
-    {{#if pokemonMinus}}
-      <a href="/app/pokedex/{{pokemonMinus.data.id}}"><img
-          src="{{pokemonMinus.data.sprites.front_default}}"
+<div id="main-pkm-details">
+  <div id="pkm-details-title">
+    <img
+      src="{{pokemonDetails.data.sprites.front_default}}"
+      height="150px"
+      alt=""
+    />
+    <h2>#{{pokemonDetails.data.id}} - {{pokemonDetails.data.name}}</h2>
+  </div>
+  <div id="tables">
+    <div id="table-one">
+      <div id="types-div">
+        <p>Types:</p>
+        <div id="types-row">
+          {{#each pokemonDetails.data.types}}
+            <p>{{type.name}}</p>
+          {{/each}}
+        </div>
+      </div>
+      <p>Weight:{{pokemonDetails.data.weight}}</p>
+      <p>Height:{{pokemonDetails.data.height}}</p>
+      <p>Color:{{pokemonSpecies.data.color.name}}</p>
+      <p>Form:{{pokemonSpecies.data.shape.name}}</p>
+      <p>Habitat:{{pokemonSpecies.data.habitat.name}}</p>
+      <p>Pokedex entry:{{pokemonSpecies.data.flavor_text_entries.2.flavor_text}}</p>
+    </div>
+    <div id="table-two">
+      {{#each pokemonDetails.data.stats}}
+        <p>{{stat.name}}:{{base_stat}}</p>
+      {{/each}}
+    </div>
+  </div>
+  <div id="pokemon-navigator">
+    <div>
+      {{#if pokemonMinus}}
+        <a href="/app/pokedex/{{pokemonMinus.data.id}}"><img
+            src="{{pokemonMinus.data.sprites.front_default}}"
+            alt=""
+          />
+          <p>#{{pokemonMinus.data.id}} - {{pokemonMinus.data.name}}</p></a>
+
+      {{/if}}
+    </div>
+    {{#if pokemonContinue}}
+      <a href="/app/pokedex/{{pokemonContinue.data.id}}"><img
+          src="{{pokemonContinue.data.sprites.front_default}}"
           alt=""
         />
-        <p>#{{pokemonMinus.data.id}} - {{pokemonMinus.data.name}}</p></a>
-
+        <p>#{{pokemonContinue.data.id}} - {{pokemonContinue.data.name}}</p></a>
     {{/if}}
   </div>
-  {{#if pokemonContinue}}
-    <a href="/app/pokedex/{{pokemonContinue.data.id}}"><img
-        src="{{pokemonContinue.data.sprites.front_default}}"
-        alt=""
-      />
-      <p>#{{pokemonContinue.data.id}} - {{pokemonContinue.data.name}}</p></a>
-  {{/if}}
 </div>
